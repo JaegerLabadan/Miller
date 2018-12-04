@@ -82,7 +82,7 @@
           <div class="left-sidebar-pro">
               <nav id="sidebar" class="">
                   <div class="sidebar-header">
-                      <a href="index.html"><img class="main-logo" src="{{ asset('img/miller/logos.png') }}" alt="" /></a>
+                      <a href="{{ url('/') }}"><img class="main-logo" src="{{ asset('img/miller/logos.png') }}" alt="" /></a>
                       <strong><a href="index.html"><img src="{{ asset('img/miller/favs.png') }}" alt="" /></a></strong>
                   </div>
                   <div class="left-custom-menu-adp-wrap comment-scrollbar">
@@ -206,7 +206,7 @@
             <nav id="sidebar" class="">
                 <div class="sidebar-header">
                     <a href="index.html"><img class="main-logo" src="{{ asset('img/miller/logos.png') }}" alt="" /></a>
-                    <strong><a href="index.html"><img src="{{ asset('img/miller/favs.png') }}" alt="" /></a></strong>
+                    <strong><a href="{{ url('/') }}"><img src="{{ asset('img/miller/favs.png') }}" alt="" /></a></strong>
                 </div>
                 <div class="left-custom-menu-adp-wrap comment-scrollbar">
                     <nav class="sidebar-nav left-sidebar-menu-pro">

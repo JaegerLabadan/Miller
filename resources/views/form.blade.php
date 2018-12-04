@@ -90,7 +90,7 @@
                   console.log(boothDays);
 
                   totalBooth = boothTotal;
-                  $('input[name="totalAmountDue"]').val(totalAmount = totalBooth);
+                  $('input[name="amount"]').val(totalAmount = totalBooth);
  
                });
                $('#save_attendee').click(function(){
@@ -117,12 +117,12 @@
                      
                   });
                   $.ajax({
-                    url: "{{ url('join_events') }}",
+                    url: "{{ url('paypal') }}",
                     method: "post",
                     data: {
                       events: eventsSelected,
                       booths: boothsSelected,
-                      totalAmountDue: $('input[name="totalAmountDue"]').val()
+                      amount: $('input[name="totalAmountDue"]').val()
                     },
                     success: function(result){
                       console.log(result);
@@ -136,6 +136,23 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="white-box">
+                    @if ($message = Session::get('success'))
+                    <div class="w3-panel w3-green w3-display-container">
+                        <span onclick="this.parentElement.style.display='none'"
+                        class="w3-button w3-green w3-large w3-display-topright">&times;</span>
+                        <p>{!! $message !!}</p>
+                    </div>
+                    <?php Session::forget('success');?>
+                    @endif
+            
+                    @if ($message = Session::get('error'))
+                    <div class="w3-panel w3-red w3-display-container">
+                        <span onclick="this.parentElement.style.display='none'"
+                        class="w3-button w3-red w3-large w3-display-topright">&times;</span>
+                        <p>{!! $message !!}</p>
+                    </div>
+                    <?php Session::forget('error');?>
+                    @endif
                   @if($nature->nature == 'Vendor')
                         <div class="container">
                             <h1 class="heads">EVENT APPLICATION FORM</h1>
@@ -149,8 +166,8 @@
                             <div class="row" style="width: 80%; margin-left: auto; margin-right: auto;">
                               <div class="col">
                                 {{-- <form method="POST" action="{{ url('join_events') }}"> --}}
-                                <form action=""></form>
-                                @csrf()
+                                <form id="payment-form" method="POST" action="{!! URL::to('paypal') !!}">
+                                    {{ csrf_field() }}
                                 @foreach($location as $e)
                                   <p>
                                     <h5 class="mon">{{ $e }}</h5>
@@ -269,13 +286,13 @@
                                         </div>
                                         <div class="col-sm-3">
                                           <span class="mons">
-                                            <input class="radi" type="" name="totalAmountDue" placeholder="$ 180.50"> 
+                                            <input class="radi" type="text"  name="amount" placeholder="$ 180.50"> 
                                           </span> 
                                         </div>
                                       </div>
                                     </div>
                                   </p>
-                                  <button class="btn rars">
+                                  <button type="submit" class="btn rars">
                                       PAY NOW
                                     </button>
                                 </form>

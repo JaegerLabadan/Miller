@@ -4,7 +4,7 @@
         $(document).ready(function(){
             //Adds Fields in Space
             $("#add_spaces").click(function(){
-                $('#space_holder').append('<div class="row" style="margin: 0; margin-top: 2px"><input type="text" class="form-control col-sm-4" name="space[]" placeholder="Type of Space"/><input type="text" class="form-control col-sm-2" name="num_of_space[]" placeholder="Number of Spaces"/><input type="text" class="form-control col-sm-2" name="space_price[]" placeholder="Price"/><input type="text" class="form-control col-sm-3" name="space_spec[]" placeholder="Space For" /><button type="button" class="btn btn-danger col-sm-1" id="add_space"><span data-feather="x-square"></span>X</button> </div>');
+                $('#space_holder').append('<div class="col-sm-3 tri" ><input type="text" class="form-control rady" placeholder="Space" name="space[]"></div><div class="col-sm-3 tri"><input type="text" class="form-control rady" placeholder="Number of Space" name="num_of_space[]"></div><div class="col-sm-2 tri"><input type="text" class="form-control rady" placeholder="Price" name="space_price[]"></div><div class="col-sm-2 tri"><input type="text" class="form-control rady" placeholder="Space For"></div>');
             });
             $("#remove_space_all").click(function(){
                 alert('clicked!');
@@ -15,12 +15,12 @@
     
             //Adds Fields in Discounts
             $("#add_discounts").click(function(){
-                $('#discount_holder').append('<div class="row" style="margin: 0; margin-top: 2px;"><input type="text" class="form-control col-sm-5" name="discount[]" placeholder="Discount"/><input type="text" class="form-control col-sm-6" name="num_of_selected_events[]" placeholder="Number of selected events"/><button type="button" class="btn btn-danger col-sm-1" id="add_discounts"><span data-feather="plus-square"></span>X</button></div>')
+                $('#discount_holder').append('<div class="col-sm-5 tri" ><input type="text" class="form-control rady" placeholder="Discount" name="discount[]"></div><div class="col-sm-5 tri"><input type="text" class="form-control rady" placeholder="Number of Selected Events" name="num_of_selected_events[]"></div>')
             });
 
             //Adds Fields in Promo Code
             $("#add_promos").click(function(){
-                $('#promo_holder').append('<div class="row" style="margin: 0;"><input type="text" class="form-control col-sm-11" name="promo_code[]"><button type="button" class="btn btn-danger col-sm-1" id="add_promos"><span data-feather="plus-square"></span>X</button></div>')
+                $('#promo_holder').append('<div class="col-sm-10 tri" ><input type="text" class="form-control rady" placeholder="Code" name="promo_code[]"></div>')
             });
     
             //Save Event
@@ -41,95 +41,117 @@
             });
         });
     </script>
-<div class="courses-area mg-b-15">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="white-box">
-                    <h2>Create an Event</h2>
-                    <form method="POST" action="{{ url('event_store') }}" enctype="multipart/form-data">
-                        @csrf
-                        <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Category of Event</label>
-                            <div class="col-sm-10">
-                                <select name="type_of_event" id="">
-                                    <option value="Gift and Crafts Expo">Gifts and Crafts Expo</option>
-                                    <option value="Pamperfest">Pamperfest</option>
-                                    <option value="Healthy Preventions Expo">Healthy Preventions Expo</option>
-                                    <option value="Black & Gold Expo">Black & Gold Expo</option>
-                                    <option value="Food Truck Festival">Food Truck Festival</option>
-                                    <option value="Womens Clothing bonanza">Women's Clothing Bonanza</option>
-                                </select>
+       <div class="courses-area mg-b-15">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <h3 class="box-title">Create an Event</h3>
+                            <div class="tabi">                      
+                            <form method="POST" action="{{ url('event_store') }}" enctype="multipart/form-data">
+                                @csrf
+                                    <div class="row">
+                                        <div class="col">
+                                            <select class="form-control rady" name="type_of_event" id="">
+                                                <option value="Gift and Crafts Expo" selected disabled>Event Category</option>
+                                                <option value="Gift and Crafts Expo">Gifts and Crafts Expo</option>
+                                                <option value="Pamperfest">Pamperfest</option>
+                                                <option value="Healthy Preventions Expo">Healthy Preventions Expo</option>
+                                                <option value="Black &amp; Gold Expo">Black &amp; Gold Expo</option>
+                                                <option value="Food Truck Festival">Food Truck Festival</option>
+                                                <option value="Womens Clothing bonanza">Women's Clothing Bonanza</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row" style="columns: 2;    padding-top: 25px;">
+                                      <div class="col" >
+                                        <input type="text" class="form-control rady"  placeholder="Event Name" name="event_name">
+                                      </div>
+                                      <div class="col">
+                                        <input type="text" class="form-control rady" placeholder="Location" name="location">
+                                      </div>
+                                    </div>
+
+                                    <div class="row" style="columns: 2;    padding-top: 25px;">
+                                      <div class="col" >
+                                        <input name="start_of_event" placeholder="Start of Event" class="form-control rady" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" >
+                                      </div>
+                                      <div class="col">
+                                        <input name="end_of_event" placeholder="End of Event" class="form-control rady" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" >
+                                      </div>
+                                    </div>
+
+                                    <div class="col-sm-12" style="padding-right: 0; padding-left: 0; padding-top: 25px;">
+                                        <h3 style="font-size: 22px; color: #444;">Booths</h3>
+                                        <div class="row" id="space_holder">
+                                          <div class="col-sm-3 tri" >
+                                            <input type="text" class="form-control rady" placeholder="Space" name="space[]">
+                                          </div>
+                                          <div class="col-sm-3 tri">
+                                            <input type="text" class="form-control rady" placeholder="Number of Space" name="num_of_space[]">
+                                          </div>
+                                          <div class="col-sm-2 tri">
+                                            <input type="text" class="form-control rady" placeholder="Price" name="space_price[]">
+                                          </div>
+                                          <div class="col-sm-2 tri">
+                                            <input type="text" class="form-control rady" placeholder="Space For">
+                                          </div>
+                                          <div class="col-sm-2 tri">
+                                            <button type="button" class="form-control rady radish" id="add_spaces"><i class="fa fa-plus-square"></i> Add</button>
+                                          </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12" style="padding-right: 0; padding-left: 0; padding-top: 25px;">
+                                        <h3 style=" font-size: 22px; color: #444;">Discounts</h3>
+                                        <div class="row" id="discount_holder">
+                                          <div class="col-sm-5 tri" >
+                                            <input type="text" class="form-control rady" placeholder="Discount" name="discount[]">
+                                          </div>
+                                          <div class="col-sm-5 tri">
+                                            <input type="text" class="form-control rady" placeholder="Number of Selected Events" name="num_of_selected_events[]">
+                                          </div>
+                                          <div class="col-sm-2 tri">
+                                            <button type="button" class="form-control rady radish" id="add_discounts"><i class="fa fa-plus-square"></i> Add</button>
+                                          </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12" style="padding-right: 0; padding-left: 0; padding-top: 25px;">
+                                        <h3 style=" font-size: 22px; color: #444;">Promo Code</h3>
+                                        <div class="row" id="promo_holder">
+                                          <div class="col-sm-10 tri" >
+                                            <input type="text" class="form-control rady" placeholder="Code" name="promo_code[]">
+                                          </div>
+                                          <div class="col-sm-2 tri">
+                                            <button type="button" class="form-control rady radish" id="add_promos"><i class="fa fa-plus-square"></i> Add</button>
+                                          </div>
+                                        </div>
+                                    </div>
+
+                                   <div class="col-sm-12" style="padding-right: 0; padding-bottom: 25px; padding-left: 0; padding-top: 25px;">
+                                        <h3 style=" font-size: 22px; color: #444;">Event Banner/Logo</h3>
+                                        <div class="row">
+                                            <div class="col-sm-5 tri">
+                                                <input class="form-control rady lam" type="file" name="event_banner" accept="image/*">
+                                            </div>        
+                                          
+                                        </div>
+                                    </div>
+                                    
+
+                                    <div class="row" style="padding-top: 25px;">
+                                        <div class="col">
+                                            <button type="submit" class="form-control radishes rady"><i class="fa fa-check-square"></i> Create Event</button>
+                                        </div>
+                                    </div>
+                                    
+                                </form>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Event Name</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" name="event_name" placeholder="Event Name">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Location</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" name="location" placeholder="Location">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Start of Event</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control" name="start_of_event">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">End of Event</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control" name="end_of_event">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Booths</label>
-                            <div class="col-sm-10" id="space_holder">
-                                <div class="row" style="margin: 0;">
-                                    <input type="text" class="form-control col-sm-4" name="space[]" placeholder="Type of Space"/>
-                                    <input type="text" class="form-control col-sm-2" name="num_of_space[]" placeholder="Number of Spaces"/>
-                                    <input type="text" class="form-control col-sm-2" name="space_price[]" placeholder="Price"/>
-                                    <input type="text" class="form-control col-sm-3" name="space_spec[]" placeholder="Space For" />
-                                    <button type="button" class="btn btn-success col-sm-1" id="add_spaces"><span data-feather="plus-square">+</span></button> 
-                                </div>
-                            </div>
-                            <label for="" class="col-sm-2 col-form-label">Discounts</label>
-                            <div class="col-sm-10" id="discount_holder">
-                                <div class="row" style="margin: 0; margin-top: 2px;">
-                                    <input type="text" class="form-control col-sm-5" name="discount[]" placeholder="Discount"/>
-                                    <input type="number" class="form-control col-sm-6" name="num_of_selected_events[]" placeholder="Number of selected events"/>
-                                    <button type="button" class="btn btn-success col-sm-1" id="add_discounts"><span data-feather="plus-square">+</span></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Promo Code</label>
-                            <div class="col-sm-10" id="promo_holder">
-                                <div class="row" style="margin: 0;">
-                                    <input type="text" class="form-control col-sm-11" name="promo_code[]">
-                                    <button type="button" class="btn btn-success col-sm-1" id="add_promos"><span data-feather="plus-square">+</span></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Event Banner</label>
-                            <div class="col-sm-10">
-                                <input type="file" class="form-control" name="event_banner">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary"><span data-feather="check-square"></span> Create Event</button>
-                            </div>
-                        </div>
-                    </form>
-                </main>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 @endsection

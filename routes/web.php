@@ -19,6 +19,8 @@ Route::get('/login', function() {
     return view('login');
 })->name('login');
 
+// Route::get('/test', 'PaymentController@test');
+
 // Route::get('/miller', function(){
 //     return view('miller');
 // })->name('miller');
@@ -50,3 +52,16 @@ Route::post('/manual_add', 'VendorController@vendor_add')->name('vendor_store');
 
 //Miller Homepage
 Route::get('/', 'MillerController@index')->name('miller_home');
+Route::get('/setup', 'MillerController@setup')->name('setup');
+Route::get('contact', 'MillerController@contact')->name('contact');
+Route::get('/testimonials', 'MillerController@testimonials')->name('testimonials');
+
+//Paypal
+//payment form
+Route::get('/test', 'PaymentController@index');
+
+// route for processing payment
+Route::post('paypal', 'PaymentController@payWithpaypal');
+
+// route for check status of the payment
+Route::get('status', 'PaymentController@getPaymentStatus');

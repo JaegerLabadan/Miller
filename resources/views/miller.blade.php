@@ -3,7 +3,7 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/miller.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="192x192"  href="images/favs.png">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
@@ -11,38 +11,38 @@
 <body>
 	<!-- --------------------------------------------------------------------- -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-collapse collpase">
-		<div class="container">
-	  <a class="navbar-brand" href="index.html"><img src="{{ asset('img/new-logo.png') }}"></a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-	  <div class="collapse navbar-collapse" id="navbarText">
-	    <ul class="tonga navbar-nav mr-auto">
-	      <li class="nav-item active">
-	        <a class="nav-link" href="#">Home </a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Expos</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Calendar</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Testimonials</a>
-	      </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url('login') }}">Login</a>
-          </li>
-	    </ul>
-	    <span class="navbar-text" style="color: #fff;">
-	      CALL 888- 308 - 3035
-	    </span>
-	  </div>
-	  </div>
-	</nav>
+            <div class="container">
+          <a class="navbar-brand" href="index.html"><img src="images/new-logo.png"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="tonga navbar-nav mr-auto">
+                <li class="nav-item active" >
+                <a class="nav-link" href="{{ url('/') }}">Home </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Expos</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Calendar</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="{{ url('testimonials') }}">Testimonials</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="{{ url('contact') }}">Contact</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="{{ url('login') }}">Login</a>
+                </li>
+            </ul>
+            <span class="navbar-text" style="color: #fff;">
+              CALL 888- 308 - 3035
+            </span>
+          </div>
+          </div>
+        </nav>
  <!-- ---------------------------------------------------------------- -->
 
 
@@ -521,33 +521,33 @@
                 </div>
             </div>
             <div class="footer_copy_right">
-                <div class="container">
-                    <div class="text-center">
-                        <p class="copyright puti" style="font-weight: 800;">
-                        HOME | EXPOS | EVENTS | CALENDAR | CONTACTS | DOWNLOADS | VENDOR LIST | SET-UP | PRIVACY POLICY
+                    <div class="container">
+                        <div class="text-center">
+                            <p class="copyright puti" style="font-weight: 800;">
+                            <a href="#">HOME</a> | <a href="#">EXPOS</a> | <a href="#">EVENTS</a> | <a href="#">CALENDAR</a> | <a href="#">CONTACTS</a> | <a href="#">DOWNLOADS</a> | <a href="#">VENDOR LIST</a> | <a href="{{ url('setup') }}">SET-UP</a> | <a href="#">PRIVACY POLICY</a>
+                            </p>
+                        </div>
+                        <div class="lol">
+                        <p>
+                            <span class="text-center">Direct sales vendors cannot participate in an event that has a rep  for their company participating.</span><br>
+                            <span>To cut down the number of vendors calling us, to ask if a vendor from thier company was in a</span><br>
+                            <span>specific event. We developed this list for their review.</span>
                         </p>
-                    </div>
-                    <div class="lol">
-                    <p>
-                        <span class="text-center">Direct sales vendors cannot participate in an event that has a rep  for their company participating.</span><br>
-                        <span>To cut down the number of vendors calling us, to ask if a vendor from thier company was in a</span><br>
-                        <span>specific event. We developed this list for their review.</span>
-                    </p>
-                    </div>
-                    <div class="text-center">
-                        <p style="margin-bottom: 0;">2018 MILLER PROMOTIONS | ALL RIGHTS RESERVED</p>
-                        <P>WEB BY <a style="color: #fff;" class="create" href="http://creativeoutsourcesolutions.com">CREATIVE OUTSOURCE SOLUTIONS</a></P>
+                        </div>
+                        <div class="text-center">
+                            <p style="margin-bottom: 0;">2018 MILLER PROMOTIONS | ALL RIGHTS RESERVED</p>
+                            <P>WEB BY <a style="color: #fff;" class="create" href="http://creativeoutsourcesolutions.com">CREATIVE OUTSOURCE SOLUTIONS</a></P>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
 
         <!-- ---------------------------------------------------------------- -->
 
 
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script type="text/javascript">
         var $div = $('tet');
 

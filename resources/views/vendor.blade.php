@@ -33,6 +33,7 @@
                   <h4 class="modal-title">Add Event for Vendor</h4>
                 </div>
                 <form method="POST" action="{{ url('manual_add') }}">
+                    @csrf
                 <div class="modal-body">
                     <div class="col-sm-12">
                         <div class="row">

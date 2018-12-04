@@ -42,6 +42,8 @@ class VendorController extends Controller
         $vendor->start = $credentials->start;
         $vendor->end = $credentials->end;
         $vendor->save();
+
+        return redirect()->route('vendors');
     }
 
 }
