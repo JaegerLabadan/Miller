@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('landing/bootstrap.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="192x192"  href="images/favs.png">
@@ -177,34 +177,32 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
       {{-- <h1>{{ count($events) }}</h1> --}}
-      <div class="carousel-inner" style="    height: 205px;">
+      <div class="carousel-inner" style="    height: 270px;">
         @if (count($events) == 1)
             @for ($i = 0; $i < count($events); $i++)
             <div class="carousel-item active">
-                    <div class="col-sm-12">
-                        <div class="row">
-                            <div class="col-sm-6" style="padding: 0;">
-                                <img class="d-block w-100" src="images/cinema.jpeg" alt="First slide">
-                            </div>
-                            <div class="col-sm-6" style="background: #00D0EA; padding-top: 15px;">
-                                <h1 style="text-align: center; font-family: 'Montserrat', sans-serif!important; font-weight: 800;">
-                                    CATCH STACY RICH ON:
-                                </h1>
-                                <h5 style="color: #fff; padding-left:45px;">
-                                    <?php
-                                        $start = $events[$i]->start;
-                                        $end = $events[$i]->end;
+                    <div class="row">
+                        <div class="col-sm-6" style="padding: 0;">
+                            <img class="d-block w-100" src="{{ asset('images/cinema.jpeg') }}" alt="First slide">
+                        </div>
+                        <div class="col-sm-6" style="background: #00D0EA; padding-top: 15px;">
+                            <h1 style="text-align: center; font-family: 'Montserrat', sans-serif!important; font-weight: 800;">
+                                CATCH STACY RICH ON:
+                            </h1>
+                            <h5 style="color: #fff; padding-left:45px;">
+                                <?php
+                                    $start = $events[$i]->start;
+                                    $end = $events[$i]->end;
 
-                                        $new_start = date('F d', strtotime($start));
-                                        $new_end = date('d', strtotime($end));
-                                        echo "$new_start", " ", "&", " ", "$new_end";
-                                    ?><br>
-                                    {{ $events[$i]->event_name }}<br>
-                                    {{ $events[$i]->category_of_event }}<br>
-                                    {{ $events[$i]->location }}<br>
-                                    9AM TILL 5PM
-                                </h5>
-                            </div>
+                                    $new_start = date('F d', strtotime($start));
+                                    $new_end = date('d', strtotime($end));
+                                    echo "$new_start", " ", "&", " ", "$new_end";
+                                ?><br>
+                                {{ $events[$i]->event_name }}<br>
+                                {{ $events[$i]->category_of_event }}<br>
+                                {{ $events[$i]->location }}<br>
+                                9AM TILL 5PM
+                            </h5>
                         </div>
                     </div>
                 </div>
@@ -215,7 +213,7 @@
                     <div class="col-sm-12">
                         <div class="row">
                             <div class="col-sm-6" style="padding: 0;">
-                                <img class="d-block w-100" src="images/cinema.jpeg" alt="First slide">
+                                <img class="d-block w-100" src="{{ asset("images/cinema.jpeg") }}" alt="First slide">
                             </div>
                             <div class="col-sm-6" style="background: #00D0EA; padding-top: 15px;">
                                 <h1 style="text-align: center; font-family: 'Montserrat', sans-serif!important; font-weight: 800;">
@@ -245,7 +243,7 @@
                     <div class="col-sm-12">
                         <div class="row">
                             <div class="col-sm-6" style="padding: 0;">
-                                <img class="d-block w-100" src="images/cinema.jpeg" alt="First slide">
+                                <img class="d-block w-100" src="{{ asset('images/cinema.jpeg') }}" alt="First slide">
                             </div>
                             <div class="col-sm-6" style="background: #00D0EA; padding-top: 15px;">
                                 <h1 style="text-align: center; font-family: 'Montserrat', sans-serif!important; font-weight: 800;">
@@ -399,63 +397,63 @@
                         </div>
                         </div>
                     </div>
-            @endfor
-            @for ($i = 1; $i < count($events); $i++)
-            <div class="carousel-item">
-                <div class="col-sm-12">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="tri">
-                                <?php
-                                    
-                                    $current = date('Y-m-d');
-                                    $start = $events[$i]->start;
-                                    $date1 = new Datetime($current);
-                                    $date2 = new Datetime($start);
-                                    $diff = $date2->diff($date1)->format('%a');
-                                    $days = intval($diff);
-                                    
-                                    if($days == 1){ 
-                                        echo "<h1 class='hi'>".$days."</h1><span class='sp'>DAY TO GO<br></span>";
-                                    }
-                                    elseif($days == 0) {
-                                        echo "<h1 class='hi'>".$days."</h1><span class='sp'>NOW<br></span>";   
-                                    }
-                                    else{
-                                        echo "<h1 class='hi'>".$days."</h1><span class='sp'>DAYS TO GO<br></span>";
-                                    }
-                                    
-                                    ?>
-                        </div>
-                    </div>
-                    <div class="col-sm-8">
-                        <h1 class="bul">
-                            <?php
-                            $start = $events[$i]->start;
-                            $end = $events[$i]->end;
+				@endfor
+				@for ($i = 1; $i < count($events); $i++)
+				<div class="carousel-item">
+					<div class="col-sm-12">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="tri">
+									<?php
+										
+										$current = date('Y-m-d');
+										$start = $events[$i]->start;
+										$date1 = new Datetime($current);
+										$date2 = new Datetime($start);
+										$diff = $date2->diff($date1)->format('%a');
+										$days = intval($diff);
+										
+										if($days == 1){ 
+											echo "<h1 class='hi'>".$days."</h1><span class='sp'>DAY TO GO<br></span>";
+										}
+										elseif($days == 0) {
+											echo "<h1 class='hi'>".$days."</h1><span class='sp'>NOW<br></span>";   
+										}
+										else{
+											echo "<h1 class='hi'>".$days."</h1><span class='sp'>DAYS TO GO<br></span>";
+										}
+										
+										?>
+							</div>
+						</div>
+						<div class="col-sm-8">
+							<h1 class="bul">
+								<?php
+								$start = $events[$i]->start;
+								$end = $events[$i]->end;
 
-                            $new_start = date('F d', strtotime($start));
-                            $new_end = date('d', strtotime($end));
-                            $year = date('Y', strtotime($end));
-                            echo "$new_start", " ", "-", " ", "$new_end", " ", "$year";
-                        ?>
-                        </h1>
-                        <h1 class="bul" style="line-height: .2;">
-                            {{ $events[$i]->event_name }}
-                        </h1><br>
-                        <span style="color: #fff; font-weight: 800;">
-                                {{ $events[$i]->location }}<br>
-                            Pa. (Benfits the Pittsburgh Food Bank)
-                        </span>
-                        <p style="margin-top: 1rem;">
-                            <button class="btn" style="margin-right: 80px; border-radius: 20px; background: #02F5FD; color: #fff;"><a style="color: #ffff; text-decoration: none;" href="#">ALL EVENT LIST</a></button>
-                            <button class="btn" style="border-radius: 20px; background: #00CDDB; color: #fff;"><a style="color: #ffff; text-decoration: none;" href="{{ url('form') }}">JOIN THIS EVENT</a></button>
-                        </p>
-                    </div>
-                </div>
-                </div>
-            </div>
-            @endfor
+								$new_start = date('F d', strtotime($start));
+								$new_end = date('d', strtotime($end));
+								$year = date('Y', strtotime($end));
+								echo "$new_start", " ", "-", " ", "$new_end", " ", "$year";
+							?>
+							</h1>
+							<h1 class="bul" style="line-height: .2;">
+								{{ $events[$i]->event_name }}
+							</h1><br>
+							<span style="color: #fff; font-weight: 800;">
+									{{ $events[$i]->location }}<br>
+								Pa. (Benfits the Pittsburgh Food Bank)
+							</span>
+							<p style="margin-top: 1rem;">
+								<button class="btn" style="margin-right: 80px; border-radius: 20px; background: #02F5FD; color: #fff;"><a style="color: #ffff; text-decoration: none;" href="#">ALL EVENT LIST</a></button>
+								<button class="btn" style="border-radius: 20px; background: #00CDDB; color: #fff;"><a style="color: #ffff; text-decoration: none;" href="{{ url('form') }}">JOIN THIS EVENT</a></button>
+							</p>
+						</div>
+					</div>
+					</div>
+				</div>
+				@endfor
             @endif
             
             
@@ -505,16 +503,16 @@
                     <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-3" style="text-align: center;">
-                            <img src="images/square.png" >
+                            <img src="{{ asset('images/square.png') }}" >
                         </div>
                         <div class="col-sm-3" style="text-align: center;">
-                            <img src="images/book.png">
+                            <img src="{{ asset("images/book.png") }}">
                         </div>
                         <div class="col-sm-3" style="text-align: center;">
-                            <img src="images/wsba.png">
+                            <img src="{{ asset("images/wsba.png") }}">
                         </div>
                         <div class="col-sm-3" style="text-align: center;">
-                            <img src="images/ins.png">
+                            <img src="{{ asset("images/ins.png") }}">
                         </div>
                     </div>
                     </div>
@@ -547,7 +545,7 @@
 
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('landing/bootstrap.min.js') }}"></script>
     <script type="text/javascript">
         var $div = $('tet');
 

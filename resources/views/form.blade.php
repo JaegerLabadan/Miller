@@ -45,7 +45,7 @@
                         console.log(result.length);
                         $.each(result, function(){
                            console.log(result[counter]['event_id']);
-                           $('[data-booth="'+result[counter]["event_id"]+'"]').append('<li><input type="checkbox" name="booth[]"data-day="'+result[counter]["day"]+'" data-event="'+result[counter]["event_id"]+'" data-price="'+result[counter]["booth_price"]+'" class="form-check-input booths" value="'+result[counter]["booth_space"]+'" data-id="'+result[counter]["eb_id"]+'"> '+result[counter]["booth_space"]+' Space <span class="mon">'+result[counter]["booth_specification"]+' - <strong>'+result[counter]["day"]+' '+result[counter]["booth_price"]+'</strong> </span></li>');
+                           $('[data-booth="'+result[counter]["event_id"]+'"]').append('<li><input type="checkbox" name="booth[]"data-day="'+result[counter]["day"]+'" data-event="'+result[counter]["event_id"]+'" data-price="'+result[counter]["booth_price"]+'" class="form-check-input booths" data-slot="'+result[counter]["booth_space"]+'" value="'+result[counter]["eb_id"]+'" data-id="'+result[counter]["eb_id"]+'"> '+result[counter]["booth_space"]+' Space <span class="mon">'+result[counter]["booth_specification"]+' - <strong>'+result[counter]["day"]+' '+result[counter]["booth_price"]+'</strong> </span></li>');
                            counter += 1;
                         });
                         // for(var counter = 0; counter < result.length; counter++){
@@ -74,7 +74,7 @@
                         if($(this).prop('checked')){
                            boothPrices.push($(this).attr('data-price'));
                            boothDays.push($(this).attr('data-day'));
-                           boothNames.push($(this).val());
+                           boothNames.push($(this).attr('data-slot'));
                               // alert($(this).attr('data-price'));
                         }
                         
