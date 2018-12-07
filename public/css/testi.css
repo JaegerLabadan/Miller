@@ -1,6 +1,6 @@
 .agays{
   color: #F6A951;
-  text-align: left;
+  text-align: center;
   font-weight: 900; 
   font-family: 'Montserrat', sans-serif;
 }
@@ -12,9 +12,14 @@
   padding: 16px;
   margin: 16px 0;
   text-align: center;
-      width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  border-right: 13px solid #FBAF07;
+  border-left: 13px solid #FEEB04;
+  border-top: 13px solid #09A5D5;
+  border-bottom: 13px solid #FE4E6E;
+  margin-bottom: 50px;
 }
 
 .caros::after {

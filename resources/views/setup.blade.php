@@ -11,39 +11,42 @@
 </head>
 <body>
 	<!-- --------------------------------------------------------------------- -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-collapse collpase">
-		<div class="container">
-	  <a class="navbar-brand" href="index.html"><img src="images/new-logo.png"></a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-	  <div class="collapse navbar-collapse" id="navbarText">
-	    <ul class="tonga navbar-nav mr-auto">
-            <li class="nav-item active" >
-            <a class="nav-link" href="{{ url('/') }}">Home </a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Expos</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Calendar</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{ url('testimonials') }}">Testimonials</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{ url('contact') }}">Contact</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{ url('login') }}">Login</a>
-            </li>
-	    </ul>
-	    <span class="navbar-text" style="color: #fff;">
-	      CALL 888- 308 - 3035
-	    </span>
-	  </div>
-	  </div>
-	</nav>
+    <header class="main_menu_area ">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#"><img src="images/new-logo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class=" navbar-nav mr-auto ml-auto">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="{{ url('/') }}">Home </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Expos</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Calendar</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ url('testimonials') }}">Testimonials</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ url('contact') }}">Contact</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ url('login') }}">Login</a>
+                      </li>
+                    </ul>
+                    <span class="navbar-text" style="color: #fff;">
+                      CALL 888- 308 - 3035
+                    </span>
+                </div>
+            </nav>
+        </header>
  <!-- ---------------------------------------------------------------- -->
 
 

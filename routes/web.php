@@ -61,7 +61,9 @@ Route::get('/testimonials', 'MillerController@testimonials')->name('testimonials
 Route::get('/test', 'PaymentController@index');
 
 // route for processing payment
-Route::post('paypal', 'PaymentController@payWithpaypal');
+// Route::post('paypal', 'PaymentController@payWithpaypal');
+Route::post('paypal', 'PaymentController@saveVendor');
+
 
 // route for check status of the payment
 Route::get('status', 'PaymentController@getPaymentStatus');

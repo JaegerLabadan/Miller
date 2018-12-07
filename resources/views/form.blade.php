@@ -1,7 +1,72 @@
 @extends('layouts.app')
 
 @section('content')
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
 
+
+
+<script>
+
+  paypal.Button.render({
+    env: 'production', // Or 'production'
+    // Set up the payment:
+    // 1. Add a payment callback
+    style: {
+      size: 'large',
+      color: 'gold',
+      shape: 'pill',
+    },
+    payment: function(data, actions) {
+      // 2. Make a request to your server
+      return actions.request.post('/api/create-payment/', {
+        amount: document.getElementById('totalAmount').value
+      })
+        .then(function(res) {
+          // 3. Return res.id from the response
+          return res.id;
+          console.log(res.id);
+          console.log(eve);
+          console.log(boo);
+        });
+    },
+    // Execute the payment:
+    // 1. Add an onAuthorize callback
+    onAuthorize: function(data, actions) {
+      // 2. Make a request to your server
+      var eve = [];
+      var boo = [];
+      jQuery("input[name='events[]']").each(function()
+          {	
+            if(jQuery(this).prop('checked')){
+                eve.push($(this).val());
+
+            }
+            
+          }
+      );
+      jQuery("input[name='booth[]']").each(function()
+          {	
+            if(jQuery(this).prop('checked')){
+                boo.push($(this).val());
+            }
+            
+          }
+      );
+      return actions.request.post('/api/execute-payment/', {
+        paymentID: data.paymentID,
+        payerID:   data.payerID,
+        events: eve,
+        booths: boo,
+        user: document.getElementById('user_id').value
+      })
+        .then(function(res) {
+          // 3. Show the buyer a confirmation message.
+          alert("Purchase! Succesful!");
+          console.log(res);
+        });
+    }
+  }, '#paypal-button');
+</script>
         <script>
            var totalBooth = 0;
            var totalAmount = 0;
@@ -136,24 +201,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="white-box">
-                    @if ($message = Session::get('success'))
-                    <div class="w3-panel w3-green w3-display-container">
-                        <span onclick="this.parentElement.style.display='none'"
-                        class="w3-button w3-green w3-large w3-display-topright">&times;</span>
-                        <p>{!! $message !!}</p>
-                    </div>
-                    <?php Session::forget('success');?>
-                    @endif
-            
-                    @if ($message = Session::get('error'))
-                    <div class="w3-panel w3-red w3-display-container">
-                        <span onclick="this.parentElement.style.display='none'"
-                        class="w3-button w3-red w3-large w3-display-topright">&times;</span>
-                        <p>{!! $message !!}</p>
-                    </div>
-                    <?php Session::forget('error');?>
-                    @endif
-                  @if($nature->nature == 'Vendor')
+                        @if($nature->nature == 'Vendor')
                         <div class="container">
                             <h1 class="heads">EVENT APPLICATION FORM</h1>
                 
@@ -168,6 +216,7 @@
                                 {{-- <form method="POST" action="{{ url('join_events') }}"> --}}
                                 <form id="payment-form" method="POST" action="{!! URL::to('paypal') !!}">
                                     {{ csrf_field() }}
+                                    <input type="hidden" name="" id="user_id" value="{{ $id }}">
                                 @foreach($location as $e)
                                   <p>
                                     <h5 class="mon">{{ $e }}</h5>
@@ -286,15 +335,14 @@
                                         </div>
                                         <div class="col-sm-3">
                                           <span class="mons">
-                                            <input class="radi" type="text"  name="amount" placeholder="$ 180.50"> 
+                                            <input class="radi" type="text" id="totalAmount"  name="amount" placeholder="$ 180.50"> 
                                           </span> 
                                         </div>
                                       </div>
                                     </div>
                                   </p>
-                                  <button type="submit" class="btn rars">
-                                      PAY NOW
-                                    </button>
+                                  <button type="submit" id="paypal-button">
+                                  </button>
                                 </form>
                               </div>
                             </div>

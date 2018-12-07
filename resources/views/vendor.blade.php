@@ -94,7 +94,7 @@
 
                             <div class="col-sm-12" style="padding-right: 0; padding-left: 0; padding-bottom: 25px; padding-top: 25px;">
                                 <!-- <button class="form-control rady radishes"><i class="fa fa-check-square"></i> Create Event</button> -->
-                                <button type="button" style="width: 40%;" class="btn btn-lg form-control rady radishes" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-square"></i> Add Event</button>
+                                <button type="button" style="width: 40%;" class="btn btn-lg form-control rady radishes" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-square"></i> Add Vendor</button>
                             </div>
 
                             <div class="tabi">                      

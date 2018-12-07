@@ -10,45 +10,48 @@
 </head>
 <body>
 	<!-- --------------------------------------------------------------------- -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-collapse collpase">
-		<div class="container">
-	  <a class="navbar-brand" href="index.html"><img src="images/new-logo.png"></a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-	  <div class="collapse navbar-collapse" id="navbarText">
-	    <ul class="tonga navbar-nav mr-auto">
-            <li class="nav-item active" >
-            <a class="nav-link" href="{{ url('/') }}">Home </a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Expos</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Calendar</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{ url('testimonials') }}">Testimonials</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{ url('contact') }}">Contact</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{ url('login') }}">Login</a>
-            </li>
-	    </ul>
-	    <span class="navbar-text" style="color: #fff;">
-	      CALL 888- 308 - 3035
-	    </span>
-	  </div>
-	  </div>
-	</nav>
+    <header class="main_menu_area ">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#"><img src="images/new-logo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class=" navbar-nav mr-auto ml-auto">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="{{ url('/') }}">Home </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Expos</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Calendar</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ url('testimonials') }}">Testimonials</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ url('contact') }}">Contact</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ url('login') }}">Login</a>
+                      </li>
+                    </ul>
+                    <span class="navbar-text" style="color: #fff;">
+                      CALL 888- 308 - 3035
+                    </span>
+                </div>
+            </nav>
+        </header>
  <!-- ---------------------------------------------------------------- -->
 
 
  <!-- ----------------------------Section 1------------------------------------ -->
 
-<div class="sec2 wrapper" style="    padding-top: 185px; padding-bottom: 80px;">
+ <div class="sec2 wrapper" style="    padding-top: 185px; padding-bottom: 80px;">
         <div class="container">
 
             <h1 class="agay">CONTACT FORM</h1>
@@ -111,20 +114,19 @@
 
  <section class="sec3">
      <div class="container caro">
-     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="    height: 245px;">
+     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="    height: 312px;">
        <ol class="carousel-indicators">
          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
        </ol>
-       <div class="carousel-inner" style="    height: 205px;">
+       <div class="carousel-inner" style="    height: 270px;">
          <div class="carousel-item active">
-             <div class="col-sm-12">
                  <div class="row">
-                     <div class="col-sm-6" style="padding: 0;">
-                         <img class="d-block w-100" src="images/cinema.jpeg" alt="First slide">
+                     <div class="col" style="padding: 0;">
+                         <img class="d-block w-100" src="images/cin.png" alt="First slide">
                      </div>
-                     <div class="col-sm-6" style="background: #00D0EA; padding-top: 15px;">
+                     <div class="col" style="background: #00D0EA; padding-top: 15px;">
                          <h1 style="text-align: center; font-family: 'Montserrat', sans-serif!important; font-weight: 800;">
                              CATCH STACY RICH ON:
                          </h1>
@@ -137,14 +139,13 @@
                          </h5>
                      </div>
                  </div>
-             </div>
          </div>
          
          <div class="carousel-item">
            <div class="col-sm-12">
                  <div class="row">
                      <div class="col-sm-6" style="padding: 0;">
-                         <img class="d-block w-100" src="images/cinema.jpeg" alt="First slide">
+                         <img class="d-block w-100" src="images/cin.png" alt="First slide">
                      </div>
                      <div class="col-sm-6" style="background: #00D0EA; padding-top: 15px;">
                          <h1 style="text-align: center; font-family: 'Montserrat', sans-serif!important; font-weight: 800;">
@@ -165,7 +166,7 @@
            <div class="col-sm-12">
                  <div class="row">
                      <div class="col-sm-6" style="padding: 0;">
-                         <img class="d-block w-100" src="images/cinema.jpeg" alt="First slide">
+                         <img class="d-block w-100" src="images/cin.png" alt="First slide">
                      </div>
                      <div class="col-sm-6" style="background: #00D0EA; padding-top: 15px;">
                          <h1 style="text-align: center; font-family: 'Montserrat', sans-serif!important; font-weight: 800;">
@@ -198,7 +199,7 @@
          <div id="carouselExampleSlidesOnly" class="carousel slide" data-interval="10000" data-ride="carousel">
            <div class="carousel-inner">
              <div class="carousel-item active">
-               <div class="col-sm-12">
+                 <div class="col-sm-12">
                  <div class="row">
                      <div class="col-sm-4">
                          <div class="tri">
@@ -215,7 +216,7 @@
                          <h1 class="bul">
                              NOVEMBER 25 - 30 2018
                          </h1>
-                         <h1 class="bul" style="line-height: .2;">
+                         <h1 class="bul" >
                              6th Annual Holiday Giving
                          </h1><br>
                          <span style="color: #fff; font-weight: 800;">
@@ -228,7 +229,7 @@
                          </p>
                      </div>
                  </div>
-               </div>
+             </div>
              </div>
              <div class="carousel-item">
                <div class="col-sm-12">
@@ -248,7 +249,7 @@
                          <h1 class="bul">
                              NOVEMBER 25 - 30 2018
                          </h1>
-                         <h1 class="bul" style="line-height: .2;">
+                         <h1 class="bul" >
                              6th Annual Holiday Giving
                          </h1><br>
                          <span style="color: #fff; font-weight: 800;">
@@ -281,7 +282,7 @@
                          <h1 class="bul">
                              NOVEMBER 25 - 30 2018
                          </h1>
-                         <h1 class="bul" style="line-height: .2;">
+                         <h1 class="bul" >
                              6th Annual Holiday Giving
                          </h1><br>
                          <span style="color: #fff; font-weight: 800;">
@@ -300,7 +301,6 @@
          </div>
      </div>
  </section>
-
 <!-- ------------------------Footer---------------------------------------- -->
 
 

@@ -13,6 +13,7 @@
     <!-- Google Fonts
 		============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- Bootstrap CSS
 		============================================ -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
@@ -104,11 +105,6 @@
                                   <a href="{{ url('publish') }}" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Create Event</span></a>
                                   
                               </li>
-                            
-                              <li>
-                                  <a href="reports.html" aria-expanded="false"><span class="educate-icon educate-charts icon-wrap"></span> <span class="mini-click-non">Reports</span></a>
-                                  
-                              </li>
                           </ul>
                       </nav>
                   </div>
@@ -188,11 +184,7 @@
                                               <li><a href="events.html">Vendor List</a></li>
                                               <li><a data-toggle="collapse" data-target="#demoevent" href="#">Create Event <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                                   
-                                              </li>
-                                              <li><a data-toggle="collapse" data-target="#demopro" href="#">Reports <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
-                                              
-                                              </li>
-                                              
+                                              </li>                                            
                                           </ul>
                                       </nav>
                                   </div>
@@ -304,9 +296,6 @@
                                             <li><a href="events.html">Vendor List</a></li>
                                             <li><a data-toggle="collapse" data-target="#demoevent" href="#">Create Event <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                                 
-                                            </li>
-                                            <li><a data-toggle="collapse" data-target="#demopro" href="#">Reports <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
-                                            
                                             </li>
                                             <li >
                                                 <a href="form.html">

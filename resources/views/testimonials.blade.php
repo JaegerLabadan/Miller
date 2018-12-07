@@ -10,45 +10,48 @@
 </head>
 <body>
 	<!-- --------------------------------------------------------------------- -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-collapse collpase">
-		<div class="container">
-	  <a class="navbar-brand" href="index.html"><img src="images/new-logo.png"></a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-	  <div class="collapse navbar-collapse" id="navbarText">
-	    <ul class="tonga navbar-nav mr-auto">
-            <li class="nav-item active" >
-            <a class="nav-link" href="{{ url('/') }}">Home </a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Expos</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Calendar</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{ url('testimonials') }}">Testimonials</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{ url('contact') }}">Contact</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{ url('login') }}">Login</a>
-            </li>
-	    </ul>
-	    <span class="navbar-text" style="color: #fff;">
-	      CALL 888- 308 - 3035
-	    </span>
-	  </div>
-	  </div>
-	</nav>
+    <header class="main_menu_area ">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#"><img src="images/new-logo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class=" navbar-nav mr-auto ml-auto">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="{{ url('/') }}">Home </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Expos</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Calendar</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ url('testimonials') }}">Testimonials</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ url('contact') }}">Contact</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ url('login') }}">Login</a>
+                      </li>
+                    </ul>
+                    <span class="navbar-text" style="color: #fff;">
+                      CALL 888- 308 - 3035
+                    </span>
+                </div>
+            </nav>
+        </header>
  <!-- ---------------------------------------------------------------- -->
 
 
  <!-- ----------------------------Section 1------------------------------------ -->
 
-<div class="sec2 wrapper" style="    padding-top: 185px; padding-bottom: 80px;">
+ <div class=" wrapper" style="    padding-top: 185px; padding-bottom: 80px;">
         <div class="container">
 
             <h1 class="agay">TESTIMONIALS</h1>
@@ -69,17 +72,17 @@
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ asset("images/user.png") }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/user1.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/user.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
@@ -103,17 +106,17 @@
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ asset('images/user.pn') }}g" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/user1.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/user.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
@@ -137,17 +140,17 @@
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ asset('images/user.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/user1.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/user.pn') }}g" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
@@ -171,17 +174,17 @@
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ asset('images/user.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/user1.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/user.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
@@ -205,17 +208,17 @@
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ asset("images/user.png") }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset("images/user1.png") }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/user.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
@@ -239,17 +242,17 @@
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ asset("images/user.png") }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/user1.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset("images/user.png") }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
@@ -273,17 +276,17 @@
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ asset('images/user.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/user1.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset("images/user.png") }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
@@ -307,17 +310,17 @@
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ asset('images/user.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset("images/user1.png") }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset("images/user.png") }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
@@ -341,17 +344,17 @@
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ asset('images/user.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/user1.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset("images/user.png") }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
@@ -375,17 +378,17 @@
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ asset("images/user.png") }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/user1.pn') }}g" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/user.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
@@ -409,17 +412,17 @@
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ asset('images/user.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/user1.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/user.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
@@ -443,17 +446,17 @@
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ asset('images/user.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/user1.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/user.png') }}" alt="Avatar" style="width:90px"><br>
+                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
                         <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
                         <p>John Doe saved us from a web disaster.</p>
                     </div>
