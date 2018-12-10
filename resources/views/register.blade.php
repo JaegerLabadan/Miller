@@ -36,10 +36,18 @@
                 </a>
         </div>
     </nav>
-                
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul style="list-style: none;">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif    
             <div class="wrapper">
                     <div class="container">
-                    <form method="POST" action="{{ url('create_account') }}">
+                    <form method="POST" action="{{ url('create_account') }}" enctype="multipart/form-data">
                             @csrf
                         <div class="row">
                             <div class="col">
@@ -64,15 +72,20 @@
                             <input type="text" class="form-control rad" name="companyname" placeholder="Company/Business Name">
                             </div>
                         </div>
+                        <div class="row" style="    padding-top: 25px;">
+                            <div class="col">
+                            <input type="text" class="form-control rad" name="vendorname" placeholder="Vendor Name">
+                            </div>
+                        </div>
             
                         <div class="row" style="    padding-top: 25px;">
                             <div class="col">
                             <select name="title">
                                 <option value="" disabled selected>Job Title</option>  
-                                <option value="volvo">Owner</option>
-                                <option value="saab">Representative</option>
-                                <option value="opel">Reseller</option>
-                                <option value="audi">Employee</option>
+                                <option value="Owner">Owner</option>
+                                <option value="Representative">Representative</option>
+                                <option value="Reseller">Reseller</option>
+                                <option value="Employee">Employee</option>
                             </select>
                             </div>
                             <div class="col">
@@ -129,10 +142,14 @@
             
                         <div class="row" style="    padding-top: 25px;">
                             <div class="col">
-                                <input type="email" class="form-control rad" name="" placeholder="Email">
+                                <input type="email" class="form-control rad" name="email" placeholder="Email">
                             </div>
                         </div>
-            
+                        <div class="row" style="    padding-top: 25px;">
+                            <div class="col">
+                                <input type="file" class="form-control rad" name="companylogo" style="width: 50%;">
+                            </div>
+                        </div>
                         <div class="row" style="    padding-top: 25px;">
                             <div class="col">
                                 <button class="btn" type="submit">

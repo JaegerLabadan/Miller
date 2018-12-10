@@ -14,7 +14,7 @@
                 success: function(result){
                     var counter = 0;
                     $.each(result, function(){
-                        $('#slots').append('<li><input type="checkbox" name="booth[]"data-day="'+result[counter]["day"]+'" data-event="'+result[counter]["event_id"]+'" data-price="'+result[counter]["booth_price"]+'" class="form-check-input booths" value="'+result[counter]["booth_space"]+'" data-id="'+result[counter]["eb_id"]+'"> '+result[counter]["booth_space"]+' Space <span class="mon">'+result[counter]["booth_specification"]+' - <strong>'+result[counter]["day"]+' '+result[counter]["booth_price"]+'</strong> </span></li>');
+                        $('#slots').append('<li><input type="checkbox" name="booth[]"data-day="'+result[counter]["day"]+'" data-event="'+result[counter]["event_id"]+'" data-price="'+result[counter]["booth_price"]+'" class="form-check-input booths" data-slot="'+result[counter]["booth_space"]+'" value="'+result[counter]["eb_id"]+'" data-id="'+result[counter]["eb_id"]+'"> '+result[counter]["booth_space"]+' Space <span class="mon">'+result[counter]["booth_specification"]+' - <strong>'+result[counter]["day"]+' '+result[counter]["booth_price"]+'</strong> </span></li>');
                         counter += 1;
                     });
                 }
@@ -27,7 +27,7 @@
             <div class="modal-dialog">
             
               <!-- Modal content-->
-              <div class="modal-content">
+              <div class="modal-content">   
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                   <h4 class="modal-title">Add Event for Vendor</h4>
@@ -45,9 +45,12 @@
                                 </select>
                             </div>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control rady" name="company_name" placeholder="Company/Vendor Name">
+                                <input type="text" class="form-control rady" name="companyname" placeholder="Company/Business Name">
                             </div>
                         </div>
+                    </div>
+                    <div class="col-sm-12" style="padding-top: 10px;">
+                        <input type="text" class="form-control rady" name="vendorname" placeholder="Vendor Name">
                     </div>
                     <div class="col-sm-12" style="padding-top: 10px;">
                             {{-- <input placeholder="Date" class="form-control rady" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" > --}}
@@ -90,6 +93,15 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="white-box">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul style="list-style: none;">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <h3 class="box-title">Vendor List by Events</h3>
 
                             <div class="col-sm-12" style="padding-right: 0; padding-left: 0; padding-bottom: 25px; padding-top: 25px;">

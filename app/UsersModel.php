@@ -12,6 +12,7 @@ class UsersModel extends Model
         'username',
         'password',
         'company_name',
+        'vendor_name',
         'title',
         'firstname',
         'lastname',

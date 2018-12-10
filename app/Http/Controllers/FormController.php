@@ -21,6 +21,7 @@ class FormController extends Controller
         $user_id = $request->session()->get('id');
         $pos = $request->session()->get('position');
         $nature = UsersModel::where('user_id', $user_id)->first();
+        $credentials = UsersModel::where('user_id', $user_id)->first();
         $events = EventsModel::all();
         $location = DB::table('events_tbl')
                  ->select('location')
@@ -35,7 +36,8 @@ class FormController extends Controller
             'nature' => $nature,
             'position' => $pos,
             'events' => $events,
-            'location' => $location
+            'location' => $location,
+            'credentials' => $credentials
             // 'location' => $location
         ]);
         // return $nature->nature;

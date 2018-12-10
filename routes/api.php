@@ -129,6 +129,7 @@ Route::post('execute-payment', function(Request $request){
             $vendor->event_id = $events[$counter];
             $vendor->event_name = $event->event_name;
             $vendor->company_name = $cred->company_name;
+            $vendor->vendor_name = $cred->vendor_name;
             $vendor->product_specification = $cred->product_specification;
             $vendor->start = $event->start;
             $vendor->end = $event->end;

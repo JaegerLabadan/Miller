@@ -7,6 +7,8 @@ use Illuminate\Routing\Redirector;
 
 //Models
 use App\EventsModel;
+use App\UsersModel;
+
 
 class DashboardController extends Controller
 {
@@ -15,16 +17,20 @@ class DashboardController extends Controller
         $id = $request->session()->get('id');
         $pos = $request->session()->get('position');
 
+        
+
         if(count($user) == 0){
             return redirect()->route('login');
         }
         else{
             $events = EventsModel::orderBy('created_at', 'DESC')->get();
+            $credentials = UsersModel::where('user_id', $id)->first();
             return view('dashboard')->with([
                 'user'=> $user,
                 'events' => $events,
                 'id' => $id,
-                'position' => $pos
+                'position' => $pos,
+                'credentials' => $credentials
             ]);
         }
         // $events = EventsModel::all()->sortByDesc('created_at');

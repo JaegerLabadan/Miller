@@ -196,7 +196,7 @@
                });
             });
         </script>
-<div class="courses-area mg-b-15">
+<div class="courses-area mg-b-15" style="padding-top: 70px">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -324,7 +324,8 @@
                                         </div>
                                       </div>
                                     </div>
-                                    <hr class="hrt">
+
+                                    {{-- <hr class="hrt"> --}}
                 
                                     <div class="col-sm-12" style="text-align: right;">
                                       <div class="row">
@@ -341,7 +342,7 @@
                                       </div>
                                     </div>
                                   </p>
-                                  <button type="submit" id="paypal-button">
+                                  <button type="submit" id="paypal-button" style="float:right;">
                                   </button>
                                 </form>
                               </div>

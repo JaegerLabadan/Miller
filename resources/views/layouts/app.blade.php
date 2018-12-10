@@ -74,16 +74,13 @@
 </head>
 
 <body>
-    @if(count($errors) > 0)
-      <div class="alert alert-danger">{{ $errors }}</div>
-    @endif
 
     @if(count($user) > 0)
         @if($position == 'admin')
           <div class="left-sidebar-pro">
               <nav id="sidebar" class="">
                   <div class="sidebar-header">
-                      <a href="{{ url('/') }}"><img class="main-logo" src="{{ asset('img/miller/logos.png') }}" alt="" /></a>
+                      {{-- <a href="{{ url('/') }}"><img class="main-logo" src="{{ asset('img/miller/logos.png') }}" alt="" /></a> --}}
                       <strong><a href="index.html"><img src="{{ asset('img/miller/favs.png') }}" alt="" /></a></strong>
                   </div>
                   <div class="left-custom-menu-adp-wrap comment-scrollbar">
@@ -117,7 +114,7 @@
                   <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div class="logo-pro">
-                              <a href="index.html"><img class="main-logo" src="{{ asset('img/miller/logos.png') }}" alt="" /></a>
+                              {{-- <a href="{{ url('/') }}"><img class="main-logo" src="{{ asset('img/miller/logos.png') }}" alt="" /></a> --}}
                           </div>
                       </div>
                   </div>
@@ -145,7 +142,11 @@
                                                       
                                                       <li class="nav-item">
                                                           <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-                                    <img src="img/product/pro4.jpg" alt="" />
+                                    @if($position != 'admin')
+                                        <img src="{{ asset('storage/logos/'. $credentials->company_logo) }}" alt="TEST" />
+                                    @else 
+                                        <img src="{{ asset('img/logo.png') }}" alt="TEST" />
+                                    @endif
                                     <span class="admin-name">{{ $user }}</span>
                                     <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
                                   </a>
@@ -178,11 +179,12 @@
                                   <div class="mobile-menu">
                                       <nav id="dropdown">
                                           <ul class="mobile-menu-nav">
-                                              <li><a data-toggle="collapse" data-target="#Charts" href="#">Dashboard <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                              <li><a data-toggle="collapse" data-target="#Charts" href="{{ url('dashboard') }}">Dashboard <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                                   
                                               </li>
-                                              <li><a href="events.html">Vendor List</a></li>
-                                              <li><a data-toggle="collapse" data-target="#demoevent" href="#">Create Event <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                              <li><a href="{{ url('vendors') }}">Vendor List</a></li>
+                                              {{-- <li><a href="{{ url('publish') }}">Create Event</a></li> --}}
+                                              <li><a data-toggle="collapse" data-target="#demoevent" href="{{ url('publish') }}">Create Event <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                                   
                                               </li>                                            
                                           </ul>
@@ -197,7 +199,7 @@
         <div class="left-sidebar-pro">
             <nav id="sidebar" class="">
                 <div class="sidebar-header">
-                    <a href="index.html"><img class="main-logo" src="{{ asset('img/miller/logos.png') }}" alt="" /></a>
+                    <a href="{{ url('/') }}"><img class="main-logo" src="{{ asset('img/miller/logos.png') }}" alt="" /></a>
                     <strong><a href="{{ url('/') }}"><img src="{{ asset('img/miller/favs.png') }}" alt="" /></a></strong>
                 </div>
                 <div class="left-custom-menu-adp-wrap comment-scrollbar">
@@ -227,7 +229,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="logo-pro">
-                            <a href="index.html"><img class="main-logo" src="img/miller/logos.png" alt="" /></a>
+                            {{-- <a href="{{ url('/') }}"><img class="main-logo" src="{{ asset('img/miller/logos.png') }}" alt="" /></a> --}}
                         </div>
                     </div>
                 </div>
@@ -255,7 +257,11 @@
                                                     
                                                     <li class="nav-item">
                                                         <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-                                  <img src="img/product/pro4.jpg" alt="" />
+                                  @if($position != 'admin')
+                                        <img src="{{ asset('storage/logos/'. $credentials->company_logo) }}" alt="TEST" />
+                                  @else 
+                                        <img src="{{ asset('img/logo.png') }}" alt="TEST" />
+                                  @endif
                                   <span class="admin-name">{{ $user }}</span>
                                   <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
                                 </a>
@@ -290,15 +296,12 @@
                                 <div class="mobile-menu">
                                     <nav id="dropdown">
                                         <ul class="mobile-menu-nav">
-                                            <li><a data-toggle="collapse" data-target="#Charts" href="#">Dashboard <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                            <li><a data-toggle="collapse" data-target="#Charts" href="{{ url('dashboard') }}">Dashboard <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                                 
-                                            </li>
-                                            <li><a href="events.html">Vendor List</a></li>
-                                            <li><a data-toggle="collapse" data-target="#demoevent" href="#">Create Event <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
-                                                
+                                            </li>   
                                             </li>
                                             <li >
-                                                <a href="form.html">
+                                                <a href="{{ url('form') }}">
                                                       <span class="educate-icon educate-library icon-wrap"></span>
                                                       <span class="mini-click-non">Form</span>
                                                 </a>
@@ -389,7 +392,7 @@
     <script src="{{ asset('js/main.js') }}"></script>
     <!-- tawk chat JS
 		============================================ -->
-    <script src="{{ asset('js/tawk-chat.js') }}"></script>
+    {{-- <script src="{{ asset('js/tawk-chat.js') }}"></script> --}}
 </body>
 
 </html>
