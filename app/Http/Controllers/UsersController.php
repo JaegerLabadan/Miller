@@ -80,7 +80,6 @@ class UsersController extends Controller
             'productspect' => 'required',
             'addressone' => 'required',
             'city' => 'required',
-            'province' => 'required',
             'zip' => 'required',
             'phone' => 'required',
             'fax' => 'required',
