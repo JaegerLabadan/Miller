@@ -342,7 +342,6 @@
                                       </div>
                                     </div>
                                   </p>
-                                  {!! Recaptcha::render() !!} 
                                   <button type="submit" id="paypal-button" style="float:right;">
                                   </button>
                                 </form>
@@ -495,7 +494,7 @@
                               </div>
                             </div>
                           </p>
-                          {!! Recaptcha::render() !!} 
+
                           <button type="submit" id="paypal-button" style="float:right;">
                           </button>
                         </form>
