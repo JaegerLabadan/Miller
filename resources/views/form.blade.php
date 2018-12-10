@@ -125,6 +125,42 @@
                      }
                   });
                });
+
+               $("input[name='events[]']").change(function(){
+                var counter = 0;
+                var totalamt = 0;
+                var totalamtf = 0;
+                  $.each($("input[name='events[]']"), function(a,b){
+                    if($(this).prop('checked')){
+                      counter = counter + 1;
+                    }
+                  });
+                  totalamt = 300*counter;
+                  if(counter >= 3 && counter <= 5){
+                    totalamtf = totalamt * 0.1;
+                    totalamtf = totalamt - totalamtf; 
+                    $('#disc').html('$ ' + totalamt * 0.1);
+                    $('#totalAmountd').val('$ ' + totalamtf);
+                  }
+                  if(counter >= 6 && counter <= 12){
+                    totalamtf = totalamt * 0.15;
+                    totalamtf = totalamt - totalamtf; 
+                    $('#disc').html('$ ' +totalamt * 0.15);
+                    $('#totalAmountd').val('$ ' + totalamtf);
+                  }
+                  if(counter >= 13){
+                    totalamtf = totalamt * 0.2;
+                    totalamtf = totalamt - totalamtf; 
+                    $('#disc').html('$ ' +totalamt * 0.2);
+                    $('#totalAmountd').val('$ ' + totalamtf);
+                  }
+                  if(counter == 1 || counter == 2){
+                    totalamtf = totalamt;
+                    $('#totalAmountd').val('$ ' + totalamtf);
+                  }
+               });
+               
+
                $(document).on('change', '.booths', function(){
                   $('#booths_purchased').replaceWith(booths_purchased.clone());
 
@@ -309,7 +345,7 @@
                                         <div class="col-sm-9 mons">
                                           DISCOUNT
                                         </div>
-                                        <div class="col-sm-3 mons">
+                                        <div class="col-sm-3 mons" id="disc">
                                           $180
                                         </div>
                                       </div>
@@ -461,8 +497,8 @@
                                 <div class="col-sm-9 mons">
                                   DISCOUNT
                                 </div>
-                                <div class="col-sm-3 mons">
-                                  $180
+                                <div class="col-sm-3 mons" id="disc">
+                                  0
                                 </div>
                               </div>
                             </div>
@@ -488,7 +524,8 @@
                                 </div>
                                 <div class="col-sm-3">
                                   <span class="mons">
-                                    <input class="radi" type="text" id="totalAmount"  name="amount" placeholder="$ 180.50"> 
+                                    <input class="radi" type="text" id="totalAmountd"  name="amountd" placeholder="$ 0"> 
+                                    {{-- <input  type="text" id="totalAmountd"  placeholder="$ 0">  --}}
                                   </span>
                                 </div>
                               </div>
