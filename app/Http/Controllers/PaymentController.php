@@ -20,32 +20,27 @@ use Redirect;
 use Session;
 use URL;
 
-//Model;
+
+use App\AttendeesModel;
 use App\UsersModel;
 use App\EventsModel;
 use App\EventBoothsModel;
 use App\VendorListByEventsModel;
 use App\VendorListAlltimeModel;
-use App\AttendeesModel;
 
 class PaymentController extends Controller
 {
-
     private $_api_context;
-    public $events = [];
-    public $booths = [];
-    public $user = '';
+    public $eventsni;
+    public $boothsni;
+    public $paymentIDni;
+    public $userni;
+    public $payerID;
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-
-    public function eventsContainer(Request $request){
-       $events =  $request->events;
-
-       return $events;
-    }
     public function __construct()
     {
 
@@ -58,15 +53,16 @@ class PaymentController extends Controller
         $this->_api_context->setConfig($paypal_conf['settings']);
 
     }
-
-    public function payWithpaypal(Request $request)
-    {   
-
-        // $this->events = $request->events;
-        $events = $request->events;
-        $this->eventsContainer($events);
-        // $this->booths = $request->booth;
-        // $this->user = $request->session()->get('id');
+    public function index()
+    {
+        return view('paywithpaypal');
+    }
+    public function payWithpaypalcom(Request $request)
+    {
+        
+        $this->eventsni = $request->events;
+        $this->boothsni = $request->booth;
+        $this->userni = $request->get('user_id');
 
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
@@ -91,8 +87,8 @@ class PaymentController extends Controller
             ->setDescription('Your transaction description');
 
         $redirect_urls = new RedirectUrls();
-        $redirect_urls->setReturnUrl(URL::to('status')) /** Specify return URL **/
-            ->setCancelUrl(URL::to('status'));
+        $redirect_urls->setReturnUrl(URL::to('statusvend')) /** Specify return URL **/
+            ->setCancelUrl(URL::to('statusvend'));
 
         $payment = new Payment();
         $payment->setIntent('Sale')
@@ -100,6 +96,7 @@ class PaymentController extends Controller
             ->setRedirectUrls($redirect_urls)
             ->setTransactions(array($transaction));
         /** dd($payment->create($this->_api_context));exit; **/
+
         try {
 
             $payment->create($this->_api_context);
@@ -109,12 +106,123 @@ class PaymentController extends Controller
             if (\Config::get('app.debug')) {
 
                 \Session::put('error', 'Connection timeout');
-                return Redirect::to('/form');
+                return Redirect::to('/');
 
             } else {
 
                 \Session::put('error', 'Some error occur, sorry for inconvenient');
-                return Redirect::to('/form');
+                return Redirect::to('/');
+
+            }
+
+        }
+
+        foreach ($payment->getLinks() as $link) {
+
+            if ($link->getRel() == 'approval_url') {
+
+                $redirect_url = $link->getHref();
+                break;
+
+            }
+
+        }
+
+        /** add payment ID to session **/
+        Session::put('paypal_payment_id', $payment->getId());
+
+        if (isset($redirect_url)) {
+            
+            $events = $this->eventsni;
+            $user = $this->userni;
+            $cred = UsersModel::where('user_id', $user)->first();
+            for($counter = 0; $counter < count($events); $counter++){
+                $event = EventsModel::where('event_id', $events[$counter])->first();
+                
+                $vendor = new VendorListByEventsModel;
+                $vendor->event_id = $events[$counter];
+                $vendor->event_name = $event['event_name'];
+                $vendor->company_name = $cred['company_name'];
+                $vendor->vendor_name = $cred['vendor_name'];
+                $vendor->product_specification = $cred['product_specification'];
+                $vendor->start = $event['start'];
+                $vendor->end = $event['end'];
+                $vendor->save();
+                
+                $attendee = new AttendeesModel;
+                $attendee->event_id = $events[$counter];
+                $attendee->user_id = $user;
+                $attendee->company_name = $cred['company_name'];
+                $attendee->booths ='Commercial';
+                $attendee->day = 'Commercial';
+                $attendee->price = 'Commercial';
+                $attendee->save();
+
+            }
+
+            return Redirect::away($redirect_url);
+        }
+
+        \Session::put('error', 'Unknown error occurred');
+        return Redirect::to('/');
+
+    }
+    public function payWithpaypal(Request $request)
+    {
+
+        $this->eventsni = $request->events;
+        $this->boothsni = $request->booth;
+        $this->userni = $request->get('user_id');
+      
+
+        $payer = new Payer();
+        $payer->setPaymentMethod('paypal');
+
+        $item_1 = new Item();
+
+        $item_1->setName('Item 1') /** item name **/
+            ->setCurrency('USD')
+            ->setQuantity(1)
+            ->setPrice($request->get('amount')); /** unit price **/
+
+        $item_list = new ItemList();
+        $item_list->setItems(array($item_1));
+
+        $amount = new Amount();
+        $amount->setCurrency('USD')
+            ->setTotal($request->get('amount'));
+
+        $transaction = new Transaction();
+        $transaction->setAmount($amount)
+            ->setItemList($item_list)
+            ->setDescription('Your transaction description');
+
+        $redirect_urls = new RedirectUrls();
+        $redirect_urls->setReturnUrl(URL::to('statusvend')) /** Specify return URL **/
+            ->setCancelUrl(URL::to('statusvend'));
+
+        $payment = new Payment();
+        $payment->setIntent('Sale')
+            ->setPayer($payer)
+            ->setRedirectUrls($redirect_urls)
+            ->setTransactions(array($transaction));
+        /** dd($payment->create($this->_api_context));exit; **/
+
+        try {
+
+            $payment->create($this->_api_context);
+
+        } catch (\PayPal\Exception\PPConnectionException $ex) {
+
+            if (\Config::get('app.debug')) {
+
+                \Session::put('error', 'Connection timeout');
+                return Redirect::to('/');
+
+            } else {
+
+                \Session::put('error', 'Some error occur, sorry for inconvenient');
+                return Redirect::to('/');
 
             }
 
@@ -137,6 +245,37 @@ class PaymentController extends Controller
         if (isset($redirect_url)) {
 
             /** redirect to paypal **/
+            $events = $this->eventsni;
+            // $events = explode(",", $events);
+            $booths = $this->boothsni;
+            // $booths = explode(",", $booths);
+            $user = $this->userni;
+            for($counter = 0; $counter < count($events); $counter++){
+                $event = EventsModel::where('event_id', $events[$counter])->first();
+                $cred = UsersModel::where('user_id', $user)->first();
+                $vendor = new VendorListByEventsModel;
+                $vendor->event_id = $events[$counter];
+                $vendor->event_name = $event['event_name'];
+                $vendor->company_name = $cred['company_name'];
+                $vendor->vendor_name = $cred['vendor_name'];
+                $vendor->product_specification = $cred['product_specification'];
+                $vendor->start = $event['start'];
+                $vendor->end = $event['end'];
+                $vendor->save();
+                for($inner = 0; $inner < count($booths); $inner++){
+                    $boothes = EventBoothsModel::where('eb_id', $booths[$inner])->first();
+                    if($events[$counter] == $boothes->event_id){
+                        $attendee = new AttendeesModel;
+                        $attendee->event_id = $events[$counter];
+                        $attendee->user_id = $user;
+                        $attendee->company_name = $cred['company_name'];
+                        $attendee->booths = $boothes['booth_space'];
+                        $attendee->day = $boothes['day'];
+                        $attendee->price = $boothes['booth_price'];
+                        $attendee->save();
+                    }
+                }
+            }
             return Redirect::away($redirect_url);
 
         }
@@ -146,40 +285,9 @@ class PaymentController extends Controller
 
     }
 
-    public function saveVendor(){
-
-        for($counter = 0; $counter < count($this->events); $counter++){
-            $event = EventsModel::where('event_id', $this->events[$counter])->first();
-            $cred = UsersModel::where('user_id', $this->user)->first();
-            for($inner = 0; $inner < count($this->booths); $inner++){
-                $boothes = EventBoothsModel::where('eb_id', $this->booths[$inner])->first();
-                if($this->events[$counter] == $boothes->event_id){
-                    $attendee = new AttendeesModel;
-                    $attendee->event_id = $this->events[$counter];
-                    $attendee->user_id = $this->user;
-                    $attendee->company_name = $cred->company_name;
-                    $attendee->booths = $boothes->booth_space;
-                    $attendee->day = $boothes->day;
-                    $attendee->price = $boothes->booth_price;
-                    $attendee->save();
-                }
-            }
-            $vendor = new VendorListByEventsModel;
-            $vendor->event_id = $this->events[$counter];
-            $vendor->event_name = $event->event_name;
-            $vendor->company_name = $cred->company_name;
-            $vendor->product_specification = $cred->product_specification;
-            $vendor->start = $event->start;
-            $vendor->end = $event->end;
-            $vendor->save();
-        }
-
-        return $this->eventsContainer();
-
-    }
-
     public function getPaymentStatus()
     {
+        
         /** Get the payment ID before session clear **/
         $payment_id = Session::get('paypal_payment_id');
 
@@ -188,7 +296,7 @@ class PaymentController extends Controller
         if (empty(Input::get('PayerID')) || empty(Input::get('token'))) {
 
             \Session::put('error', 'Payment failed');
-            return Redirect::to('/form');
+            return Redirect::to('/');
 
         }
 
@@ -199,40 +307,24 @@ class PaymentController extends Controller
         /**Execute the payment **/
         $result = $payment->execute($execution, $this->_api_context);
 
-        if ($result->getState() == 'approved') {
+        
 
-            for($counter = 0; $counter < count($this->events); $counter++){
-                $event = EventsModel::where('event_id', $this->events[$counter])->first();
-                $cred = UsersModel::where('user_id', $this->user)->first();
-                for($inner = 0; $inner < count($this->booths); $inner++){
-                    $boothes = EventBoothsModel::where('eb_id', $this->booths[$inner])->first();
-                    if($this->events[$counter] == $boothes->event_id){
-                        $attendee = new AttendeesModel;
-                        $attendee->event_id = $this->events[$counter];
-                        $attendee->user_id = $this->user;
-                        $attendee->company_name = $cred->company_name;
-                        $attendee->booths = $boothes->booth_space;
-                        $attendee->day = $boothes->day;
-                        $attendee->price = $boothes->booth_price;
-                        $attendee->save();
-                    }
-                }
-                $vendor = new VendorListByEventsModel;
-                $vendor->event_id = $this->events[$counter];
-                $vendor->event_name = $event->event_name;
-                $vendor->company_name = $cred->company_name;
-                $vendor->product_specification = $cred->product_specification;
-                $vendor->start = $event->start;
-                $vendor->end = $event->end;
-                $vendor->save();
-            }
+        // $paymentId = Input::get('paymentID');
+        // $payment = Payment::get($paymentId, $apiContext);
+
+        if ($result->getState() == 'approved') {
+            
             \Session::put('success', 'Payment success');
             return Redirect::to('/form');
-
         }
-
         \Session::put('error', 'Payment failed');
-        return Redirect::to('/form');
+        return Redirect::to('/');
+
+    }
+
+    public function puttodb()
+    {
+
 
     }
 
