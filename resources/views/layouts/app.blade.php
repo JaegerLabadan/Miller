@@ -37,6 +37,7 @@
     <!-- main CSS
 		============================================ -->
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/new.css') }}">
     <!-- educate icon CSS
 		============================================ -->
     <link rel="stylesheet" href="{{ asset('css/educate-custon-icon.css') }}">
@@ -80,7 +81,7 @@
           <div class="left-sidebar-pro">
               <nav id="sidebar" class="">
                   <div class="sidebar-header">
-                      {{-- <a href="{{ url('/') }}"><img class="main-logo" src="{{ asset('img/miller/logos.png') }}" alt="" /></a> --}}
+                      <a href="{{ url('/') }}"><img class="main-logo" src="{{ asset('img/miller/logos.png') }}" alt="" /></a>
                       <strong><a href="index.html"><img src="{{ asset('img/miller/favs.png') }}" alt="" /></a></strong>
                   </div>
                   <div class="left-custom-menu-adp-wrap comment-scrollbar">
@@ -114,7 +115,7 @@
                   <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div class="logo-pro">
-                              {{-- <a href="{{ url('/') }}"><img class="main-logo" src="{{ asset('img/miller/logos.png') }}" alt="" /></a> --}}
+                              <a href="{{ url('/') }}"><img class="main-logo" src="{{ asset('img/miller/logos.png') }}" alt="" /></a>
                           </div>
                       </div>
                   </div>
@@ -151,12 +152,12 @@
                                     <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
                                   </a>
                                                           <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                              <li><a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a>
+                                                              {{-- <li><a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a>
                                                               </li>
                                                               <li><a href="#"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a>
                                                               </li>
                                                               <li><a href="#"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
-                                                              </li>
+                                                              </li> --}}
                                                               <li><a href="{{ url('logout') }}"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a>
                                                               </li>
                                                           </ul>
@@ -179,12 +180,12 @@
                                   <div class="mobile-menu">
                                       <nav id="dropdown">
                                           <ul class="mobile-menu-nav">
-                                              <li><a data-toggle="collapse" data-target="#Charts" href="{{ url('dashboard') }}">Dashboard <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                              <li><a data-toggle="collapse" href="{{ url('dashboard') }}">Dashboard <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                                   
                                               </li>
                                               <li><a href="{{ url('vendors') }}">Vendor List</a></li>
                                               {{-- <li><a href="{{ url('publish') }}">Create Event</a></li> --}}
-                                              <li><a data-toggle="collapse" data-target="#demoevent" href="{{ url('publish') }}">Create Event <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                              <li><a data-toggle="collapse"  href="{{ url('publish') }}">Create Event <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                                   
                                               </li>                                            
                                           </ul>
@@ -229,7 +230,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="logo-pro">
-                            {{-- <a href="{{ url('/') }}"><img class="main-logo" src="{{ asset('img/miller/logos.png') }}" alt="" /></a> --}}
+                            <a href="{{ url('/') }}"><img class="main-logo" src="{{ asset('img/miller/logos.png') }}" alt="" /></a>
                         </div>
                     </div>
                 </div>
@@ -258,7 +259,7 @@
                                                     <li class="nav-item">
                                                         <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                   @if($position != 'admin')
-                                        <img src="{{ asset('storage/logos/'. $credentials->company_logo) }}" alt="TEST" />
+                                        <img src="{{ asset('storage/app/public/logos/'. $credentials->company_logo) }}" alt="TEST" />
                                   @else 
                                         <img src="{{ asset('img/logo.png') }}" alt="TEST" />
                                   @endif
@@ -266,14 +267,14 @@
                                   <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
                                 </a>
                                                         <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                            <li><a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a>
+                                                            {{-- <li><a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a>
                                                             </li>
                                                             <li><a href="#"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a>
                                                             </li>
                                                             <li><a href="#"><span class="edu-icon edu-money author-log-ic"></span>User Billing</a>
                                                             </li>
                                                             <li><a href="#"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
-                                                            </li>
+                                                            </li> --}}
                                                             <li><a href="{{ url('logout') }}"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a>
                                                             </li>
                                                         </ul>

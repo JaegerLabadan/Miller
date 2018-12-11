@@ -1,0 +1,31 @@
+
+.radiuses{
+	border-radius: 10px!important;
+	background: transparent!important;
+    color: #444!important;
+    text-align: center!important;
+    float: right!important;
+    border: 2px solid #48b24b!important; 
+}
+
+.radiuses:hover{
+	background: #48b24b!important;
+	color: white!important;
+}
+
+.bords{
+	text-align: center!important;
+    color: #444!important;
+    border: 3px solid #F6A951!important;
+    font-weight: 800!important;
+    font-size: 17px!important;
+    border-radius: 7px!important;
+}
+
+.lit{
+	color: #444!important;
+}
+
+.lit:hover{
+	color: #fff!important;
+}

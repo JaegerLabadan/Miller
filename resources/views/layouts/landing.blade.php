@@ -15,79 +15,79 @@
 <body>
     <!-- --------------------------------------------------------------------- -->
     @if(count($user) == 0)
-    <header class="main_menu_area ">
+        <header class="main_menu_area">
             <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="#"><img src="images/new-logo.png" alt=""></a>
+            <a class="navbar-brand" href="{{ url('/') }}"><img src="images/new-logo.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
                 </button>
-    
+        
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class=" navbar-nav mr-auto ml-auto">
-                      <li class="nav-item">
+                <ul class=" navbar-nav mr-auto ml-auto">
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ url('/') }}">Home </a>
-                      </li>
-                      <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Expos</a>
-                      </li>
-                      <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Calendar</a>
-                      </li>
-                      <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ url('testimonials') }}">Testimonials</a>
-                      </li>
-                      <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ url('contact') }}">Contact</a>
-                      </li>
-                      <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ url('login') }}">Login</a>
-                      </li>
-                    </ul>
-                    <span class="navbar-text" style="color: #fff;">
-                      CALL 888- 308 - 3035
-                    </span>
+                    </li>
+                </ul>
+                <span class="navbar-text my-2 my-lg-0" style="color: #fff;">
+                    CALL 888- 308 - 3035
+                </span>
                 </div>
             </nav>
         </header>
     @else
-    <header class="main_menu_area ">
-        <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="#"><img src="images/new-logo.png" alt=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <header class="main_menu_area">
+            <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="{{ url('/') }}"><img src="images/new-logo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class=" navbar-nav mr-auto ml-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/') }}">Home </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Expos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Calendar</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ url('testimonials') }}">Testimonials</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ url('contact') }}">Contact</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ url('dashboard') }}">Dashboard</a>
-                  </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/') }}">Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Expos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Calendar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('testimonials') }}">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('contact') }}">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('login') }}">Login</a>
+                    </li>
                 </ul>
-                <span class="navbar-text" style="color: #fff;">
-                  CALL 888- 308 - 3035
+                <span class="navbar-text my-2 my-lg-0" style="color: #fff;">
+                    CALL 888- 308 - 3035
                 </span>
-            </div>
-        </nav>
-    </header>
+                </div>
+            </nav>
+        </header>
     @endif
 
 
@@ -151,20 +151,20 @@
     <div class="footer_copy_right">
             <div class="container">
                 <div class="text-center">
-                    <p class="copyright puti" style="font-weight: 800;">
-                    <a href="#">HOME</a> | <a href="#">EXPOS</a> | <a href="#">EVENTS</a> | <a href="#">CALENDAR</a> | <a href="#">CONTACTS</a> | <a href="#">DOWNLOADS</a> | <a href="#">VENDOR LIST</a> | <a href="{{ url('setup') }}">SET-UP</a> | <a href="#">PRIVACY POLICY</a>
+                    <p class="copyright puti" style="font-weight: 800; text-align: center;">
+                    <a href="{{ url('/') }}">HOME</a> | <a href="#">EXPOS</a> | <a href="#">EVENTS</a> | <a href="#">CALENDAR</a> | <a href="{{ url('contact') }}">CONTACTS</a> | <a href="#">DOWNLOADS</a> | <a href="#">VENDOR LIST</a> | <a href="{{ url('setup') }}">SET-UP</a> | <a href="#">PRIVACY POLICY</a>
                     </p>
                 </div>
                 <div class="lol">
-                <p>
+                <p style="color: white;">
                     <span class="text-center">Direct sales vendors cannot participate in an event that has a rep  for their company participating.</span><br>
                     <span>To cut down the number of vendors calling us, to ask if a vendor from thier company was in a</span><br>
                     <span>specific event. We developed this list for their review.</span>
                 </p>
                 </div>
                 <div class="text-center">
-                    <p style="margin-bottom: 0;">2018 MILLER PROMOTIONS | ALL RIGHTS RESERVED</p>
-                    <P>WEB BY <a style="color: #fff;" class="create" href="http://creativeoutsourcesolutions.com">CREATIVE OUTSOURCE SOLUTIONS</a></P>
+                    <p style="margin-bottom: 0; color: white; text-align: center;">2018 MILLER PROMOTIONS | ALL RIGHTS RESERVED</p>
+                    <P style="color: white; text-align: center;">WEB BY <a style="color: #fff;" class="create" href="http://creativeoutsourcesolutions.com">CREATIVE OUTSOURCE SOLUTIONS</a></P>
                 </div>
             </div>
         </div>

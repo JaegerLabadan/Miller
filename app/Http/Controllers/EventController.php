@@ -20,6 +20,7 @@ use App\EventDiscountsModel;
 
 class EventController extends Controller
 {
+
     //Publish Event Tab
     public function index(Request $request){
         $user = $request->session()->get('user');
@@ -58,7 +59,8 @@ class EventController extends Controller
             $path = $request->file('event_banner')->storeAs('public/event_banner', $filenameToStore); 
             $event->event_banner = $filenameToStore;
         }
-        $event->promo_codes = implode(',', $promo_codes);
+
+        // $event->promo_codes = implode(',', $promo_codes);
         $event->save();
 
         //Creates the time Period
@@ -88,16 +90,16 @@ class EventController extends Controller
         }
 
         //Discounts
-        $discount = $request->discount;
-        $discount_count = $request->num_of_selected_events;
+        // $discount = $request->discount;
+        // $discount_count = $request->num_of_selected_events;
 
-        for($counter = 0; $counter < count($discount); $counter++){
-            $event_disc = new EventDiscountsModel;
-            $event_disc->event_id = $event->event_id;
-            $event_disc->discount = $discount[$counter];
-            $event_disc->discount_count = $discount_count[$counter];
-            $event_disc->save();
-        }
+        // for($counter = 0; $counter < count($discount); $counter++){
+        //     $event_disc = new EventDiscountsModel;
+        //     $event_disc->event_id = $event->event_id;
+        //     $event_disc->discount = $discount[$counter];
+        //     $event_disc->discount_count = $discount_count[$counter];
+        //     $event_disc->save();
+        // }
 
 
         return redirect()->route('dashboard')->with('errors', $record);

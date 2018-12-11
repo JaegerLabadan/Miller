@@ -4,6 +4,9 @@
 @section('content')
 <div class="courses-area mg-b-15">
     <div class="container-fluid">
+        @if(count($events) == 0)
+            <h1>No Results Founf!</h1>
+        @else
         <div class="row">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="float: right;">
                 <div class="white-box">
@@ -43,6 +46,7 @@
                 </div>
             </div>
         </div>
+        @endif
     </div>
 </div>
 @endsection

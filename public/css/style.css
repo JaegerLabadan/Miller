@@ -4,6 +4,10 @@ body, html {
     font-family: 'Montserrat', sans-serif!important;
 }
 
+@-ms-viewport{
+  width: device-width;
+}
+
 h1, h2, h3, h4, h5, h6, p, a, span{
   font-family: 'Montserrat', sans-serif!important;
 }
@@ -679,433 +683,7 @@ h1, h2, h3, h4, h5, p{
 
 /* Footer Three Area css
 ============================================================================================ */
-.footer_three_area {
-  background: #f9faff;
-  padding-top: 90px;
-}
 
-.footer_three_area .footer_widget_inner {
-  padding-bottom: 65px;
-}
-
-.ft_title {
-  padding-bottom: 20px;
-}
-
-.ft_title h3 {
-  font-size: 18px;
-  font-family: "Montserrat", sans-serif;
-  color: #424242;
-  text-transform: uppercase;
-}
-
-.ab_ft_widget {
-  max-width: 280px;
-}
-
-.ab_ft_widget p {
-  font-size: 14px;
-  line-height: 26px;
-  font-family: "Poppins", sans-serif;
-  letter-spacing: .28px;
-  color: #6b6d6f;
-  padding: 25px 0px;
-}
-
-.ab_ft_widget ul li {
-  margin-right: 20px;
-  display: inline-block;
-}
-
-.ab_ft_widget ul li a {
-  color: #6b6d6f;
-  font-size: 18px;
-  -webkit-transition: all 400ms linear 0s;
-  -o-transition: all 400ms linear 0s;
-  transition: all 400ms linear 0s;
-}
-
-.ab_ft_widget ul li:last-child {
-  margin-right: 0px;
-}
-
-.ab_ft_widget ul li:hover a {
-  color: #fc5a1a;
-}
-
-.ab_ft_widget.blue ul li:hover a {
-  color: #7db9e8;
-}
-
-.ab_ft_widget.violet ul li:hover a {
-  color: #857de8;
-}
-
-.link_ft_widget ul li {
-  margin-bottom: 5px;
-}
-
-.link_ft_widget ul li a {
-  color: #6b6d6f;
-  font-size: 14px;
-  line-height: 26px;
-  letter-spacing: .28px;
-  font-family: "Poppins", sans-serif;
-  -webkit-transition: all 400ms linear 0s;
-  -o-transition: all 400ms linear 0s;
-  transition: all 400ms linear 0s;
-}
-
-.link_ft_widget ul li:last-child {
-  margin-bottom: 0px;
-}
-
-.link_ft_widget ul li:hover a {
-  color: #fc5a1a;
-}
-
-.link_ft_widget.blue ul li:hover a {
-  color: #7db9e8;
-}
-
-.link_ft_widget.violet ul li:hover a {
-  color: #857de8;
-}
-
-.ft_copyright {
-  text-align: center;
-}
-
-.ft_copyright p {
-  color: #6b6d6f;
-  font-size: 16px;
-  line-height: 26px;
-  letter-spacing: .32px;
-  border-top: 1px solid #e8e8e8;
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.nine_footer {
-  overflow: hidden;
-  background: #eb484d;
-  padding: 35px 0px;
-}
-
-.nine_footer .nine_copyright .pull-left {
-  font-size: 16px;
-  color: #fff;
-}
-
-.nine_footer .nine_copyright .pull-left h4 {
-  font-size: 16px;
-  font-family: "Heebo", sans-serif;
-  font-weight: normal;
-}
-
-.nine_footer .nine_copyright .pull-left h4 a {
-  color: #fff;
-  font-weight: bold;
-}
-
-.nine_footer .nine_copyright .pull-right h5 {
-  font-size: 16px;
-  color: #fff;
-  font-family: "Heebo", sans-serif;
-  font-weight: normal;
-}
-
-/* End Footer Three Area css
-============================================================================================ */
-/* Ten Footer Area css
-============================================================================================ */
-.ten_footer_area {
-  background: url(../img/ten-ft-bg.jpg) no-repeat scroll center center;
-  background-size: cover;
-}
-
-.ten_footer_widget {
-  padding: 100px 0px;
-
-}
-
-.ten_f_title {
-  padding-top: 20px;
-}
-
-.ten_f_title h3 {
-  font-size: 20px;
-  color: #d7d7d7;
-  font-family: "Heebo", sans-serif;
-  padding-bottom: 45px;
-}
-
-.t_ab_widget h4 {
-  font-size: 20px;
-  color: #a5acb7;
-  font-family: "Heebo", sans-serif;
-  font-weight: 500;
-  padding-top: 45px;
-}
-
-.t_ab_widget p {
-  font-size: 16px;
-  color: #585858;
-  line-height: 28px;
-  font-family: "Heebo", sans-serif;
-  padding: 25px 0px;
-}
-
-.t_ab_widget a {
-  font-size: 14px;
-  color: #0083ff;
-  font-family: "Heebo", sans-serif;
-  text-transform: uppercase;
-}
-
-.t_link_widget {
-  max-width: 98px;
-  margin: auto;
-}
-
-.t_link_widget ul li {
-  margin-bottom: 13px;
-}
-
-.t_link_widget ul li a {
-  font-size: 16px;
-  color: #585858;
-  font-family: "Heebo", sans-serif;
-  font-weight: normal;
-  position: relative;
-  -webkit-transition: all 400ms linear 0s;
-  -o-transition: all 400ms linear 0s;
-  transition: all 400ms linear 0s;
-}
-
-.t_link_widget ul li a i {
-  position: absolute;
-  left: 0px;
-  top: 48%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  -webkit-transition: all 400ms linear 0s;
-  -o-transition: all 400ms linear 0s;
-  transition: all 400ms linear 0s;
-  opacity: 0;
-}
-
-.t_link_widget ul li:last-child {
-  margin-bottom: 0px;
-}
-
-.t_link_widget ul li:hover a {
-  padding-left: 16px;
-  color: #0083ff;
-}
-
-.t_link_widget ul li:hover a i {
-  color: #0083ff;
-  opacity: 1;
-}
-
-.t_contact_widget h4 {
-  font-size: 18px;
-  color: #a5acb7;
-  font-weight: bold;
-  font-family: "Heebo", sans-serif;
-  padding-bottom: 25px;
-}
-
-.t_contact_widget h5 {
-  font-size: 16px;
-  font-weight: 500;
-  font-family: "Heebo", sans-serif;
-  color: #8e8e8e;
-}
-
-.t_contact_widget p {
-  font-size: 16px;
-  color: #585858;
-  font-weight: normal;
-  font-family: "Heebo", sans-serif;
-  padding-top: 10px;
-  padding-bottom: 25px;
-}
-
-.t_contact_widget .send_bent {
-  color: #e9e9e9;
-  font-family: "Heebo", sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 14px;
-  background: #0083ff;
-  padding: 0px 50px;
-  display: inline-block;
-  line-height: 39px;
-  border: 1px solid #0083ff;
-  border-radius: 20px;
-  -webkit-transition: all 400ms linear 0s;
-  -o-transition: all 400ms linear 0s;
-  transition: all 400ms linear 0s;
-}
-
-.t_contact_widget .send_bent:hover {
-  background: transparent;
-  color: #0083ff;
-}
-
-.t_contact_widget h6 {
-  font-size: 18px;
-  color: #a5acb7;
-  font-weight: bold;
-  font-family: "Heebo", sans-serif;
-  padding-top: 50px;
-  padding-bottom: 20px;
-}
-
-.t_contact_widget ul li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.t_contact_widget ul li a {
-  background: #273546;
-  height: 28px;
-  width: 28px;
-  text-align: center;
-  border-radius: 50%;
-  line-height: 28px;
-  display: inline-block;
-  color: #fff;
-  -webkit-transition: all 400ms linear 0s;
-  -o-transition: all 400ms linear 0s;
-  transition: all 400ms linear 0s;
-}
-
-.t_contact_widget ul li:last-child {
-  margin-right: 0px;
-}
-
-.t_contact_widget ul li:hover a {
-  background: #0083ff;
-  color: #fff;
-}
-
-.ten_f_copyright {
-  text-align: center;
-  border-top: 1px dashed #454545;
-  padding: 45px 0px;
-}
-
-.ten_f_copyright h4 {
-  font-size: 16px;
-  color: #585858;
-  font-family: "Heebo", sans-serif;
-  padding-bottom: 15px;
-}
-
-.ten_f_copyright h5 {
-  color: #8e8e8e;
-  font-size: 16px;
-  font-family: "Heebo", sans-serif;
-}
-
-/* End Ten Footer Area css
-============================================================================================ */
-/* End Ten Footer Area css
-============================================================================================ */
-.gd_footer_area {
-  background: #0a0002;
-}
-
-.gd_footer_widgets {
-  padding: 100px 0px;
-}
-
-.gd_ab_widget p {
-  font-size: 14px;
-  line-height: 24px;
-  color: #8e8e8e;
-  font-family: "Heebo", sans-serif;
-  max-width: 255px;
-  padding-top: 25px;
-}
-
-.gd_link_widget ul li {
-  margin-bottom: 4px;
-}
-
-.gd_link_widget ul li:last-child {
-  margin-bottom: 0px;
-}
-
-.gd_link_widget ul li a {
-  font-size: 14px;
-  line-height: 24px;
-  color: #8e8e8e;
-  font-family: "Heebo", sans-serif;
-  text-transform: uppercase;
-}
-
-.gd_f_title {
-  padding-bottom: 20px;
-}
-
-.gd_f_title h3 {
-  color: #fff;
-  font-size: 18px;
-  font-family: "Heebo", sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
-.gd_contact_widget h5 {
-  font-size: 14px;
-  color: #8e8e8e;
-  font-family: "Heebo", sans-serif;
-  padding-bottom: 8px;
-  font-weight: normal;
-}
-
-.gd_contact_widget h5 i {
-  color: #e9003f;
-  padding-right: 10px;
-}
-
-.gd_contact_widget ul {
-  padding-top: 20px;
-}
-
-.gd_contact_widget ul li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.gd_contact_widget ul li:last-child {
-  margin-right: 0px;
-}
-
-.gd_contact_widget ul li a {
-  font-size: 22px;
-  color: #8e8e8e;
-}
-
-.gd_copyright {
-  text-align: center;
-  padding-bottom: 45px;
-}
-
-.gd_copyright h5 {
-  font-size: 14px;
-  color: #8e8e8e;
-  font-family: "Heebo", sans-serif;
-}
-
-/* End Ten Footer Area css
-============================================================================================ */
-/*---------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */
 
@@ -1139,19 +717,16 @@ h1, h2, h3, h4, h5, p{
 }
 
 .tri{
-  /*background: #00D0EA;*/
-  background: url('../images/lola.png');
-  background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /*border-radius: 50%;*/
     text-align: center;
-/*
-        height: 100%;
-    width: 60%;*/
-    margin-left: auto;
-    margin-right: auto;
 }
+
+.likod{
+  background: url('../images/calendar.png');
+  background-position: top;
+    background-repeat: no-repeat;
+}
+
+
 .carousel-control-next{
   right: -100px!important;
 }
@@ -1162,16 +737,13 @@ h1, h2, h3, h4, h5, p{
 .hi{
   font-size: 90px!important; 
   font-weight: 900; 
-  font-family: 'Montserrat', sans-serif;margin-top: 35px;
-/*      margin-bottom: -20px;
-    padding-top: 20px;*/
-    margin-top: -4px;
-    padding-top: 80px;
-    color: #F6A951;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 87px;
+  color: #3cd7e7;
 }
 
 .sp{
-  color: #F6A951; 
+  color: #3cd7e7; 
   font-weight: 800;
 }
 
@@ -1404,21 +976,6 @@ animation:fadeInDown 3s ;
 }
 
 
-
-/*asfaGsagafgafjugojhgsdfgds*/
-
-/*@media (min-width: 800px) {
-  .lift img{
-    display: none;
-          }
-
-  .roww{
-    padding-top: 80px;
-  }
-}
-
-*/
-
 /* Main Menu Area css
 ============================================================================================ */
 .main_menu_area {
@@ -1429,20 +986,32 @@ animation:fadeInDown 3s ;
   z-index: 30;
   padding: 0px 45px;
   background-color: #000!important;
-    border-bottom: 4px solid #4C9CF1;
- /* background:
-    linear-gradient(
-      to left, 
-      rgba(76,241,161, 1)0%,
-      rgba(76,156,241, 1)12%,
-      rgba(241,76,156,1)47%,
-      rgba(241,161,76, 1) 100%
-        )
-    left 
-    bottom
-    #777    
-    no-repeat; 
-  background-size:100% 5px ;*/
+  border-bottom: 4px solid #4C9CF1;
+}
+
+.main_menu_area .navbar .navbar-toggler span {
+  height: 7px;
+  width: 40px;
+  display: block;
+  background: #F6A951;
+  margin-bottom: 3px;
+}
+
+.nav-link:hover , .nav-link.active a {
+  color: #F57C1F!important;
+}
+
+.main_menu_area .navbar .navbar-nav li a {
+  -webkit-transition: all 400ms linear 0s;
+  -o-transition: all 400ms linear 0s;
+  transition: all 400ms linear 0s;
+}
+
+/*.nav-link a{
+  line-height: 118px;
+  -webkit-transition: all 400ms linear 0s;
+  -o-transition: all 400ms linear 0s;
+  transition: all 400ms linear 0s;
 }
 
 .main_menu_area .navbar {
@@ -1564,8 +1133,8 @@ animation:fadeInDown 3s ;
   }
 }
 
-.main_menu_area .navbar .navbar-nav li:hover a, .main_menu_area .navbar .navbar-nav li.active a {
-  color: #F57C1F;
+.nav-link:hover , .nav-link.active a {
+  color: #F57C1F!important;
 }
 
 .main_menu_area.navbar_fixed {
@@ -1589,14 +1158,63 @@ animation:fadeInDown 3s ;
 
 .main_menu_area.navbar_fixed .navbar .navbar-nav li a {
   line-height: 70px;
-}
+}*/
 
 /* End Main Menu Area css
 ============================================================================================ */
+.flip-box {
+  background-color: transparent;
+      width: 100%;
+    height: 200px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
 
-/*@media (min-width: 1020px) {
-  .navbar{
-    display: inline-block;
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-front {
+  background-color: transparent;
+  padding-top: 15%;
+}
+
+/* Style the back side */
+.flip-box-back {
+  background-color: transparent;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+
+/*@media only screen and (min-width: 400px) {
+  .cont, .sec2s {
+    width: 100%;
   }
 }
-*/
+@media only screen and (max-width: 400px) {
+  .cont {
+    width: 130%;
+  }
+}*/

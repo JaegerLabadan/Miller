@@ -2,7 +2,13 @@
 
 @section('content')
  <!-- ----------------------------Section 1------------------------------------ -->
-
+<style>
+    h1, h2, h3, h4, h5, p{
+    color: #fff;
+    text-align: center;
+	
+}
+</style>
  <div class=" wrapper" style="    padding-top: 185px; padding-bottom: 80px;">
         <div class="container">
 
@@ -24,19 +30,24 @@
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
+                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
+                        <p><span>Ann Kiefer</span></p>
+                        <p>"I got some awesome bling and a new steeler shirt <i class="fa fa-heart"></i> "</p>
                     </div>
                     <div class="carousel-item">
                         <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
+                        <p><span>Mashel Tarrance Rathmell</span></p>
+                        <p>"Lots of cute Hand made Steeler Items and More..LOVED IT!"</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
+                        <p><span>Rose Mitsch</span></p>
+                        <p>"Lot of nice Pittsburgh Black and Gold items.. Very nice show."</p>
                     </div>
                     <div class="carousel-item">
                         <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
+                        <p><span>Brett Cupp</span></p>
+                        <p>"Lot of COOL stuff for Steeler and Pens fans. I crossed off some names on my Christmas list. There was so much stuff that I have never seen before, that I spent more than I expected"</p>
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -58,19 +69,14 @@
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
                         <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
+                        <p><span style="font-style: italic;">Unknown</span></p>
+                        <p>"The show exceeded our expectations!!"</p>
                     </div>
                     <div class="carousel-item">
                         <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
+                        <p><span style="font-style: italic;">Unknown</span></p>
+                        <p>"Wonderful location and heavy traffic."</p>
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -93,18 +99,13 @@
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
+                         <p><span style="font-style: italic;">Unknown</span></p>
+                        <p>"Very nice. Will be participating in May."</p>
                     </div>
                     <div class="carousel-item">
                         <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
+                         <p><span style="font-style: italic;">Unknown</span></p>
+                        <p>I enjoyed myself and my husband and I both agree that I would do more shows with Miller Promotions.</p>
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -126,19 +127,9 @@
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
                         <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
+                        <p><span>Marie Shick Lilla</span> Rose Independent Consultant</p>
+                        <p>"Hey, I wanted to thank you again for such a wonderfully organized event! As soon as I get a chance to catch my breath I will look/decide on which of the events to do with you again!  I appreciate you time and abilities!"</p>
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -161,18 +152,8 @@
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
+                        <p><span style="font-style: italic;">Unknown</span></p>
+                        <p>"As a small business owner, I was quite nervous about my first mall show.  But Miller Productions made it so easy! Despite the horrible snow storm, <a href="https://www.facebook.com/erikasartsandprimitives">Erika's Arts & Primitives</a> had an extremely successful weekend.. looking forward to the next"</p>
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -195,18 +176,10 @@
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
+                        <p><span>Melinda </span> LeSimplicity Jewelry</p>
+                        <p>"It's been two years since I have participated in a show at the Monroeville Mall and I became very excited to learn about the the Feb 7-9, Miller Show. I missed my customers from that area including Penn Hills, Murrysville and Westmoreland. Business has been slow at the Robinson Mall due to the horrid winter weather of nothing but frigid temperatures, snow and icy roads. But when the 2nd weekend in February came so did the crowd at the Monroeville Mall! With the great turnout this show was as good as any show I had at the Robinson location. I continue to have confidence in the Monroeville Mall because of the demographics of the population and great location. Of course, the real bonus was the reasonable booth fee and the delicious bagels made available for all the vendors in the morning!!!
+                        <br><br>
+                        I'm eagerly looking forward to your Springtime show April 11-13, 2014."</p>
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -229,18 +202,8 @@
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
+                        <p><span>Autumn </span> Bewitching Brew</p>
+                        <p>"I just wanted to thank you for putting on such a great show.  The turn out today was really quite good given the weather.  I hope you have a great turn out tomorrow as well."</p>
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -263,18 +226,8 @@
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
+                        <p><span>Tim Dye </span> Owner of Bull of the Woods</p>
+                        <p>"I would like to say that the craft show that Susan Miller coordinated at the Pittsburgh Mills Mall was the best that my company has participated in. It was well organized and you were able to talk to Susan if you needed any assistance. She also had personnel there to answer any questions. She had a nice variety of vendors and everyone was professional. Thank you Susan for an outstanding event"</p>
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -297,18 +250,10 @@
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
+                        <p><span>Sara Hammel</span> Sara's Nails</p>
+                        <p>"Had an extremely succesful experience at Pamperfest.  I am really looking forward to the next event!!! I made over $450 in Manicures, Pedicures, and Nail Extensions!!! Every guest I tended to was really enjoying themselves!  I met a lot of great women! <br><br>
+
+                        Thank you for all that you did to promote this event and make it run as smoothly as possible."</p>
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -331,18 +276,8 @@
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
+                        <p><span>Chris Weeks</span></p>
+                        <p>"My name is Chris Weeks, and I was one of the vendors at the Pamperfest Event, selling Premier Jewelry. This was a very fun event, and everyone one that attended had a blast. I think this is an event that you should do twice a year, or even more, just in different area's. Everything went smooth considering the short time you had to put this event together. I think with more advertising, more time , etc. this event would bring in a large amount of people in. I had 2 of my close friends that came, and I just talked to her and they loved it. They can't wait till the next one. Neither can I !!!"</p>
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -365,18 +300,8 @@
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
+                        <p><span style="font-style: italic;">Unknown</span></p>
+                        <p>"I have been booking shows with this promoter since 2002 and have always had sucess. Susan Miller is very easy to work with. She helps you to have success at her shows. Getting your application in early does help for a promoter to advertise sooner, so I always get mine in early. I will always be a part of this promoters show."</p>
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -399,18 +324,8 @@
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/user1.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/user.png" alt="Avatar" style="width:90px"><br>
-                        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                        <p>John Doe saved us from a web disaster.</p>
+                        <p><span>Sue Swan</span> Zoedak</p>
+                        <p>"The shows we have participated in with Miller Promotions have been outstanding and Susan Miller has been more than professional. As well the crafters and vendors were above most."</p>
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -426,7 +341,6 @@
             
         </div>
     </div>
-
  <!-- ---------------------------------------------------------------- -->
 
 

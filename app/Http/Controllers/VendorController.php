@@ -18,7 +18,7 @@ class VendorController extends Controller
         $id = $request->session()->get('id');
         $position = $request->session()->get('position');
         $vendor = VendorListByEventsModel::all();
-        // $events = EventsModel::all();
+        $current = date('Y-m-d');
         $events = EventsModel::whereDate('start', '>=', $current)->orderBy('start', 'DESC')->get();
         // $event = EventsModel::where('event_id', $) 
 
@@ -53,6 +53,7 @@ class VendorController extends Controller
         $vendor->product_specification = $request->get('product_specification');
         $vendor->start = $credentials->start;
         $vendor->end = $credentials->end;
+        $vendor->type = 'manual';
         $vendor->save();
 
         for($counter = 0; $counter < count($booths); $counter++){
@@ -68,6 +69,35 @@ class VendorController extends Controller
 
 
         return redirect()->route('vendors');
+    }
+
+    public function vendor_view(Request $request){
+
+        $user = $request->session()->get('user');
+        $id = $request->session()->get('id');
+        $position = $request->session()->get('position');
+
+        $company = $request->get('company');
+        $eventid = $request->get('event_id');
+        
+        $eventname = EventsModel::where('event_id', $eventid)->pluck('event_name')->first();
+
+        $credentials = UsersModel::where('company_name', $company)->first();
+        $details = AttendeesModel::where('event_id', $eventid)
+                                 ->where('company_name', $company)
+                                 ->get();
+
+        return view('vendor_view')->with([
+            'credentials' => $credentials,
+            'details' => $details,
+            'user'=> $user,
+            'id' => $id,
+            'position' => $position,
+            'eventname' => $eventname
+        ]);
+        // return $details;
+
+
     }
 
 }

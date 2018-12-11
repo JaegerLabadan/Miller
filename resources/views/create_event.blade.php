@@ -103,7 +103,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-sm-12" style="padding-right: 0; padding-left: 0; padding-top: 25px;">
+                                    {{-- <div class="col-sm-12" style="padding-right: 0; padding-left: 0; padding-top: 25px;">
                                         <h3 style=" font-size: 22px; color: #444;">Discounts</h3>
                                         <div class="row" id="discount_holder">
                                           <div class="col-sm-5 tri" >
@@ -128,7 +128,7 @@
                                             <button type="button" class="form-control rady radish" id="add_promos"><i class="fa fa-plus-square"></i> Add</button>
                                           </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
 
                                    <div class="col-sm-12" style="padding-right: 0; padding-bottom: 25px; padding-left: 0; padding-top: 25px;">
                                         <h3 style=" font-size: 22px; color: #444;">Event Banner/Logo</h3>

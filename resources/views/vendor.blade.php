@@ -22,6 +22,9 @@
         });
      });
 </script>
+        @if(count($vendor) == 0)
+            <h1>No Results found!</h1>
+        @else
         <!-- Modal -->
           <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
@@ -88,7 +91,7 @@
             </div>
           </div>
         
-        <div class="courses-area mg-b-15">
+        {{-- <div class="courses-area mg-b-15">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -137,6 +140,68 @@
                     </div>
                 </div>
             </div>
+        </div> --}}
+        <div class="courses-area mg-b-15">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <h3 class="box-title">Vendor List by Events</h3>
+
+                            <div class="col-sm-12" style="padding-right: 0; padding-left: 0; padding-bottom: 25px; padding-top: 25px;">
+                                <!-- <button class="form-control rady radishes"><i class="fa fa-check-square"></i> Create Event</button> -->
+                                <button type="button" style="width: 40%;" class="btn btn-lg form-control rady radishes" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-square"></i> Add Event</button>
+                            </div>
+
+                            <div class="tabi">                      
+                              <table class="table table-bordered table-hover">
+                                <thead>
+                                  <tr>
+                                    <th>Event Name</th>
+                                    <th>Company Name</th>
+                                    <th>Product Specification</th>
+                                    <th>Start</th>
+                                    <th>End</th>
+                                    <th>Action</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    @foreach($vendor as $v)
+                                    <tr>
+                                      <td>{{ $v->event_name }}</td>
+                                      <td>{{ $v->company_name }}</td>
+                                      <td>{{ $v->product_specification }}</td>
+                                      <td>{{ $v->start }}</td>
+                                      <td>{{ $v->end }}</td>
+                                      <td>
+                                          @if($v->type != 'manual')
+                                            <form action="{{ url('view') }}" method="GET">
+                                                <input type="hidden" name="company" value="{{ $v->company_name }}">
+                                                <input type="hidden" name="event_id" value="{{ $v->event_id }}">
+                                                <button type="submit" class="btn btn-lg form-control rady radiuses lit">
+                                                    <i class="fa fa-eye"></i> VIEW
+                                                </button>
+                                            </form>
+                                           @else
+                                            <h5>Manually added</h5>
+                                           @endif 
+                                        {{-- <button type="button" class="btn btn-lg form-control rady radiuses">  
+                                            <a href="{{ url('view') }}" class="lit">
+                                                <i class="fa fa-eye"></i> VIEW
+                                            </a> 
+                                        </button> --}}
+                                      </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                              </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        @endif
 
 @endsection

@@ -53,11 +53,12 @@ class UsersController extends Controller
         $user = $request->session()->flush();
         $nature = $request->session()->flush();
         $message = 'Logged Out!';
-        return redirect()->route('miller_home')->with([
-            'errors'=> $message,
-            'user' => $user,
-            'nature' => $nature
-        ]);
+        // return redirect()->route('miller_home')->with([
+        //     'errors'=> $message,
+        //     'user' => $user,
+        //     'nature' => $nature
+        // ]);
+        return redirect()->route('miller_home');
 
     }
 
