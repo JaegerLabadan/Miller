@@ -5,68 +5,7 @@
 
 
 
-<script>
 
-  paypal.Button.render({
-    env: 'production', // Or 'production'
-    // Set up the payment:
-    // 1. Add a payment callback
-    style: {
-      size: 'large',
-      color: 'gold',
-      shape: 'pill',
-    },
-    payment: function(data, actions) {
-      // 2. Make a request to your server
-      return actions.request.post('/api/create-payment/', {
-        amount: document.getElementById('totalAmount').value
-      })
-        .then(function(res) {
-          // 3. Return res.id from the response
-          return res.id;
-          console.log(res.id);
-          console.log(eve);
-          console.log(boo);
-        });
-    },
-    // Execute the payment:
-    // 1. Add an onAuthorize callback
-    onAuthorize: function(data, actions) {
-      // 2. Make a request to your server
-      var eve = [];
-      var boo = [];
-      jQuery("input[name='events[]']").each(function()
-          {	
-            if(jQuery(this).prop('checked')){
-                eve.push($(this).val());
-
-            }
-            
-          }
-      );
-      jQuery("input[name='booth[]']").each(function()
-          {	
-            if(jQuery(this).prop('checked')){
-                boo.push($(this).val());
-            }
-            
-          }
-      );
-      return actions.request.post('/api/execute-payment/', {
-        paymentID: data.paymentID,
-        payerID:   data.payerID,
-        events: eve,
-        booths: boo,
-        user: document.getElementById('user_id').value
-      })
-        .then(function(res) {
-          // 3. Show the buyer a confirmation message.
-          alert("Purchase! Succesful!");
-          console.log(res);
-        });
-    }
-  }, '#paypal-button');
-</script>
         <script>
            var totalBooth = 0;
            var totalAmount = 0;
@@ -140,23 +79,23 @@
                     totalamtf = totalamt * 0.1;
                     totalamtf = totalamt - totalamtf; 
                     $('#disc').html('$ ' + totalamt * 0.1);
-                    $('#totalAmountd').val('$ ' + totalamtf);
+                    $('#totalAmountd').val(totalamtf);
                   }
                   if(counter >= 6 && counter <= 12){
                     totalamtf = totalamt * 0.15;
                     totalamtf = totalamt - totalamtf; 
                     $('#disc').html('$ ' +totalamt * 0.15);
-                    $('#totalAmountd').val('$ ' + totalamtf);
+                    $('#totalAmountd').val(totalamtf);
                   }
                   if(counter >= 13){
                     totalamtf = totalamt * 0.2;
                     totalamtf = totalamt - totalamtf; 
                     $('#disc').html('$ ' +totalamt * 0.2);
-                    $('#totalAmountd').val('$ ' + totalamtf);
+                    $('#totalAmountd').val(totalamtf);
                   }
                   if(counter == 1 || counter == 2){
                     totalamtf = totalamt;
-                    $('#totalAmountd').val('$ ' + totalamtf);
+                    $('#totalAmountd').val(totalamtf);
                   }
                });
                
@@ -238,6 +177,68 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="white-box">
                         @if($nature->nature == 'Vendor')
+                        <script>
+
+                          paypal.Button.render({
+                            env: 'sandbox', // Or 'production'
+                            // Set up the payment:
+                            // 1. Add a payment callback
+                            style: {
+                              size: 'large',
+                              color: 'gold',
+                              shape: 'pill',
+                            },
+                            payment: function(data, actions) {
+                              // 2. Make a request to your server
+                              return actions.request.post('/api/create-payment/', {
+                                amount: document.getElementById('totalAmount').value
+                              })
+                                .then(function(res) {
+                                  // 3. Return res.id from the response
+                                  return res.id;
+                                  console.log(res.id);
+                                  console.log(eve);
+                                  console.log(boo);
+                                });
+                            },
+                            // Execute the payment:
+                            // 1. Add an onAuthorize callback
+                            onAuthorize: function(data, actions) {
+                              // 2. Make a request to your server
+                              var eve = [];
+                              var boo = [];
+                              jQuery("input[name='events[]']").each(function()
+                                  {	
+                                    if(jQuery(this).prop('checked')){
+                                        eve.push($(this).val());
+                        
+                                    }
+                                    
+                                  }
+                              );
+                              jQuery("input[name='booth[]']").each(function()
+                                  {	
+                                    if(jQuery(this).prop('checked')){
+                                        boo.push($(this).val());
+                                    }
+                                    
+                                  }
+                              );
+                              return actions.request.post('/api/execute-payment/', {
+                                paymentID: data.paymentID,
+                                payerID:   data.payerID,
+                                events: eve,
+                                booths: boo,
+                                user: document.getElementById('user_id').value
+                              })
+                                .then(function(res) {
+                                  // 3. Show the buyer a confirmation message.
+                                  alert("Purchase! Succesful!");
+                                  console.log(res);
+                                });
+                            }
+                          }, '#paypal-button');
+                        </script>
                         <div class="container">
                             <h1 class="heads">EVENT APPLICATION FORM</h1>
                 
@@ -386,6 +387,56 @@
                         </div>
                     </div>
                   @else
+                  <script>
+
+                    paypal.Button.render({
+                      env: 'sandbox', // Or 'production'
+                      // Set up the payment:
+                      // 1. Add a payment callback
+                      style: {
+                        size: 'large',
+                        color: 'gold',
+                        shape: 'pill',
+                      },
+                      payment: function(data, actions) {
+                        // 2. Make a request to your server
+                        return actions.request.post('/api/create-payment-commercial/', {
+                          amount: document.getElementById('totalAmountd').value
+                        })
+                          .then(function(res) {
+                            // 3. Return res.id from the response
+                            return res.id;
+                          });
+                      },
+                      // Execute the payment:
+                      // 1. Add an onAuthorize callback
+                      onAuthorize: function(data, actions) {
+                        // 2. Make a request to your server
+                        var eve = [];
+                        jQuery("input[name='events[]']").each(function()
+                            {	
+                              if(jQuery(this).prop('checked')){
+                                  eve.push($(this).val());
+                  
+                              }
+                              
+                            }
+                        );
+
+                        return actions.request.post('/api/execute-payment-commercial/', {
+                          paymentID: data.paymentID,
+                          payerID:   data.payerID,
+                          events: eve,
+                          user: document.getElementById('user_id').value
+                        })
+                          .then(function(res) {
+                            // 3. Show the buyer a confirmation message.
+                            alert("Purchase! Succesful!");
+                            console.log(res);
+                          });
+                      }
+                    }, '#paypal-button-commercial');
+                  </script>
                   <div class="container">
                     <h1 class="heads">Commercial Vendor Application</h1>
         
@@ -524,7 +575,7 @@
                                 </div>
                                 <div class="col-sm-3">
                                   <span class="mons">
-                                    <input class="radi" type="text" id="totalAmountd"  name="amountd" placeholder="$ 0"> 
+                                    <input class="radi" type="text" id="totalAmountd"  name="amountd" placeholder="$ 0" value=""> 
                                     {{-- <input  type="text" id="totalAmountd"  placeholder="$ 0">  --}}
                                   </span>
                                 </div>
@@ -532,7 +583,7 @@
                             </div>
                           </p>
 
-                          <button type="submit" id="paypal-button" style="float:right;">
+                          <button type="submit" id="paypal-button-commercial" style="float:right;">
                           </button>
                         </form>
                       </div>
