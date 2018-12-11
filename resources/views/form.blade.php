@@ -176,6 +176,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="white-box">
+
                         @if($nature->nature == 'Vendor')
                         <script>
 
@@ -190,6 +191,7 @@
                             },
                             payment: function(data, actions) {
                               // 2. Make a request to your server
+                              console.log('suod');
                               return actions.request.post('/api/create-payment/', {
                                 amount: document.getElementById('totalAmount').value
                               })
@@ -200,6 +202,7 @@
                                   console.log(eve);
                                   console.log(boo);
                                 });
+                                console.log(actions);
                             },
                             // Execute the payment:
                             // 1. Add an onAuthorize callback
@@ -224,6 +227,7 @@
                                     
                                   }
                               );
+                              console.log(data);
                               return actions.request.post('/api/execute-payment/', {
                                 paymentID: data.paymentID,
                                 payerID:   data.payerID,
@@ -243,6 +247,23 @@
                             <h1 class="heads">EVENT APPLICATION FORM</h1>
                 
                             <div class="row" style="padding-top: 20px;">
+                              @if ($message = Session::get('success'))
+                              <div class="w3-panel w3-green w3-display-container">
+                                  <span onclick="this.parentElement.style.display='none'"
+                                  class="w3-button w3-green w3-large w3-display-topright">&times;</span>
+                                  <p>{!! $message !!}</p>
+                              </div>
+                              <?php Session::forget('success');?>
+                              @endif
+
+                              @if ($message = Session::get('error'))
+                              <div class="w3-panel w3-red w3-display-container">
+                                  <span onclick="this.parentElement.style.display='none'"
+                                  class="w3-button w3-red w3-large w3-display-topright">&times;</span>
+                                  <p>{!! $message !!}</p>
+                              </div>
+                              <?php Session::forget('error');?>
+                              @endif
                               <div class="col">
                                 <h5>Choose the Event/s (Click all the applies)</h5>
                               </div>
@@ -251,9 +272,9 @@
                             <div class="row" style="width: 80%; margin-left: auto; margin-right: auto;">
                               <div class="col">
                                 {{-- <form method="POST" action="{{ url('join_events') }}"> --}}
-                                <form id="payment-form" method="POST" action="{!! URL::to('paypal') !!}">
+                                <form id="payment-form" method="POST" action="{!! URL::to('paypalvend') !!}">
                                     {{ csrf_field() }}
-                                    <input type="hidden" name="" id="user_id" value="{{ $id }}">
+                                    <input type="hidden" name="user_id" id="user_id" value="{{ $id }}">
                                 @foreach($location as $e)
                                   <p>
                                     <h5 class="mon">{{ $e }}</h5>
@@ -379,8 +400,9 @@
                                       </div>
                                     </div>
                                   </p>
-                                  <button type="submit" id="paypal-button" style="float:right;">
-                                  </button>
+                                  <button class="w3-btn w3-blue" style="float:right;">Pay with PayPal</button>
+                                  {{-- <button type="submit" id="paypal-button" style="float:right;">
+                                  </button> --}}
                                 </form>
                               </div>
                             </div>
@@ -438,7 +460,7 @@
                     }, '#paypal-button-commercial');
                   </script>
                   <div class="container">
-                    <h1 class="heads">Commercial Vendor Application</h1>
+                    <h1 class="heads">Event Application Form</h1>
         
                     <div class="row" style="padding-top: 20px;">
                       <div class="col" style="margin-left: 100px;">
@@ -458,11 +480,28 @@
                     </div>
         
                     <div class="row" style="width: 80%; margin-left: auto; margin-right: auto;">
+                      @if ($message = Session::get('success'))
+                      <div class="w3-panel w3-green w3-display-container">
+                          <span onclick="this.parentElement.style.display='none'"
+                          class="w3-button w3-green w3-large w3-display-topright">&times;</span>
+                          <p>{!! $message !!}</p>
+                      </div>
+                      <?php Session::forget('success');?>
+                      @endif
+
+                      @if ($message = Session::get('error'))
+                      <div class="w3-panel w3-red w3-display-container">
+                          <span onclick="this.parentElement.style.display='none'"
+                          class="w3-button w3-red w3-large w3-display-topright">&times;</span>
+                          <p>{!! $message !!}</p>
+                      </div>
+                      <?php Session::forget('error');?>
+                      @endif
                       <div class="col">
                         {{-- <form method="POST" action="{{ url('join_events') }}"> --}}
-                        <form id="payment-form" method="POST" action="{!! URL::to('paypal') !!}">
+                        <form id="payment-form" method="POST" action="{!! URL::to('paypalcomercial') !!}">
                             {{ csrf_field() }}
-                            <input type="hidden" name="" id="user_id" value="{{ $id }}">
+                            <input type="hidden" name="user_id" id="user_id" value="{{ $id }}">
                         @foreach($location as $e)
                           <p>
                             <h5 class="mon">{{ $e }}</h5>
@@ -575,7 +614,7 @@
                                 </div>
                                 <div class="col-sm-3">
                                   <span class="mons">
-                                    <input class="radi" type="text" id="totalAmountd"  name="amountd" placeholder="$ 0" value=""> 
+                                    <input class="radi" type="text" id="totalAmountd"  name="amount" placeholder="$ 0" value=""> 
                                     {{-- <input  type="text" id="totalAmountd"  placeholder="$ 0">  --}}
                                   </span>
                                 </div>
@@ -583,8 +622,9 @@
                             </div>
                           </p>
 
-                          <button type="submit" id="paypal-button-commercial" style="float:right;">
-                          </button>
+                          {{-- <button type="submit" id="paypal-button-commercial" style="float:right;">
+                          </button> --}}
+                          <button class="w3-btn w3-blue" style="float:right;">Pay with PayPal</button>
                         </form>
                       </div>
                     </div>

@@ -67,3 +67,11 @@ Route::post('paypal', 'PaymentController@saveVendor');
 
 // route for check status of the payment
 Route::get('status', 'PaymentController@getPaymentStatus');
+
+
+// route for processing payment
+Route::post('paypalvend', 'PaymentController@payWithpaypal');
+Route::post('paypalcomercial', 'PaymentController@payWithpaypalcom');
+
+// route for check status of the payment
+Route::get('statusvend', 'PaymentController@getPaymentStatus');
